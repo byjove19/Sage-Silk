@@ -1,5 +1,5 @@
 Sage-Silk 🛍️ | Online Clothing Store
-Sage-Silk is a modern online clothing store built with MongoDB, EJS, and BetterSQLite, offering a seamless shopping experience. The platform is designed for efficiency, scalability, and easy product management.
+Sage-Silk is a modern online clothing store built with MongoDB, EJS, offering a seamless shopping experience. The platform is designed for efficiency, scalability, and easy product management.
 
 Features ✨
 Dynamic Product Pages – Displays products with images, videos, and descriptions.
