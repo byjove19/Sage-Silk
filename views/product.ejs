@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Products</title>
+</head>
+<body>
+    <h1>Product List</h1>
+    <ul>
+        <% products.forEach(product => { %>
+            <li>
+                <strong><%= product.name %></strong> - $<%= product.price %>
+                (<%= product.description %>) 
+                <a href="/product/<%= product._id %>">View More</a>
+            </li>
+        <% }); %>
+    </ul>
+
+
+     <!--Scoll Top-->
+     <span id="site-scroll"><i class="icon anm anm-angle-up-r"></i></span>
+     <!--End Scoll Top-->
+
+    <!-- jQuery -->
+    <script src="assets/js/jquery-2.1.0.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="assets/js/popper.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <!-- Plugins -->
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/accordions.js"></script>
+    <script src="assets/js/datepicker.js"></script>
+    <script src="assets/js/scrollreveal.min.js"></script>
+    <script src="assets/js/waypoints.min.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <script src="assets/js/imgfix.min.js"></script> 
+    <script src="assets/js/slick.js"></script> 
+    <script src="assets/js/lightbox.js"></script> 
+    <script src="assets/js/isotope.js"></script> 
+ <!-- Global Init -->
+
+ 
+ <script src="assets/js/custom.js"></script>
+  
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+<script>
+   $(document).ready(function () {
+    
+    const preloader = $("#preloader");
+    if (preloader.length) {
+        setTimeout(() => preloader.hide(), 1000);
+    }
+
+    $(".search-trigger").click(() => $(".search").addClass("open"));
+    $(".close-btn").click(() => $(".search").removeClass("open"));
+
+    $(".left-content-slider").owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        dots: true,
+        autoplay: true,
+        autoplayTimeout: 3000,
+        items: 1,
+        responsive: { 0: { items: 1 }, 600: { items: 1 }, 1000: { items: 1 } },
+    });
+
+    $(".owl-carousel").owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        dots: true,
+        autoplay: true,
+        autoplayTimeout: 3000,
+        responsive: { 0: { items: 1 }, 600: { items: 2 }, 1000: { items: 3 } },
+    });
+
+    setInterval(showNextSlide, 3000);
+
+    $('.next-btn').click(showNextSlide);
+    $('.prev-btn').click(function () {
+        $(slides[currentIndex]).fadeOut();
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        $(slides[currentIndex]).fadeIn();
+    });
+
+    document.querySelectorAll('.add-to-wishlist').forEach(function (element) {
+        element.addEventListener('click', function (event) {
+            event.preventDefault();
+            const productId = this.getAttribute('data-product-id');
+            addToWishlist(productId);
+        });
+    });
+
+    document.querySelectorAll('.add-to-cart').forEach(function (element) {
+        element.addEventListener('click', function (event) {
+            event.preventDefault();
+            const productId = this.getAttribute('data-product-id');
+            addToCart(productId);
+        });
+    });
+
+    document.querySelectorAll('.view-product').forEach(function (element) {
+        element.addEventListener('click', function () {
+            const productId = this.getAttribute('data-product-id');
+            viewProduct(productId);
+        });
+    });
+});
+
+function addToWishlist(productId) {
+    console.log(`Product ${productId} added to wishlist.`);
+}
+
+function addToCart(productId) {
+    console.log(`Product ${productId} added to cart.`);
+}
+
+function viewProduct(productId) {
+    console.log(`Viewing product ${productId}.`);
+}
+
+$(function() {
+            var selectedClass = "";
+            $("p").click(function(){
+            selectedClass = $(this).attr("data-rel");
+            $("#portfolio").fadeTo(50, 0.1);
+                $("#portfolio div").not("."+selectedClass).fadeOut();
+            setTimeout(function() {
+              $("."+selectedClass).fadeIn();
+              $("#portfolio").fadeTo(50, 1);
+            }, 500);
+                
+            });
+        });
+
+        const refreshAuth = async () => {
+    try {
+        const res = await fetch('/auth/refresh', { method: 'POST', credentials: 'include' });
+        if (res.ok) {
+            const data = await res.json();
+            localStorage.setItem('accessToken', data.accessToken);
+        } else {
+            window.location.href = '/login';
+        }
+    } catch (error) {
+        console.error('Auth refresh failed:', error);
+        window.location.href = '/login';
+    }
+};
+
+setInterval(refreshAuth, 14 * 60 * 1000);
+
+</script>
+
+
+
+
+</body>
+</html>
