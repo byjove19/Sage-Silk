@@ -1,4 +1,10 @@
 require("dotenv").config();
+const { OpenAI } = require('openai');
+
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+});
+
 const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
@@ -9,13 +15,14 @@ const socketIo = require("socket.io");
 const bodyParser = require("body-parser"); 
 const db = require("./database");
 const cors = require('cors');
+const Product = require('./models/products');
 
 // Routes
 const adminRoutes = require("./routes/adminRoutes");
 const authRoutes = require("./routes/authRoutes");
 const productRoutes = require("./routes/productRoutes");
 const cartRoutes = require("./routes/cartRoutes");
-const categoryRoutes = require("./routes/categoryRoutes");
+
 
 const app = express();
 const server = http.createServer(app);
@@ -55,20 +62,27 @@ app.use((req, res, next) => {
 });
 
 // Simple Chatbot Responses
-const botResponses = {
-    "hello": "Hi there! Welcome to Sage and Silk. How can I help you?",
-    "help": "I can assist you with orders, product inquiries, and more!",
-    "order": "To check your order status, please provide your order ID.",
-    "default": "I'm not sure about that. Can you rephrase?"
-};
-
-// WebSocket Connection
 io.on("connection", (socket) => {
     console.log("A user connected");
-    
-    socket.on("user message", (msg) => {
+
+    socket.on("user message", async (msg) => {
         console.log("User:", msg);
-        socket.emit("bot message", botResponses[msg.toLowerCase()] || botResponses["default"]);
+
+        try {
+            const response = await openai.chat.completions.create({
+                model: "gpt-3.5-turbo", // or "gpt-4" if you have access
+                messages: [
+                    { role: "system", content: "You are a helpful assistant for an online clothing store called Sage and Silk." },
+                    { role: "user", content: msg }
+                ],
+            });
+
+            const botReply = response.choices[0].message.content;
+            socket.emit("bot message", botReply);
+        } catch (error) {
+            console.error("OpenAI API Error:", error);
+            socket.emit("bot message", "Sorry, I'm having trouble responding right now.");
+        }
     });
 
     socket.on("disconnect", () => {
@@ -76,12 +90,12 @@ io.on("connection", (socket) => {
     });
 });
 
+
 // Routes
 app.use(authRoutes);
 app.use(cartRoutes);
 app.use("/products", productRoutes);
 app.use(adminRoutes);
-app.use(categoryRoutes);
 
 // Static Page Routes
 app.get("/", (req, res) => res.render("index", { user: req.user }));
@@ -110,9 +124,35 @@ app.get("/products", async (req, res) => {
       res.status(500).json({ message: "Server error", error });
     }
   });
+  app.get('/product/:id', async (req, res) => {
+    try {
+        const product = await Product.findById(req.params.id);
+        if (!product) return res.status(404).send('Product not found');
+        res.render('product-accordion', { product }); 
+    } catch (err) {
+        res.status(500).send('Server error');
+    }
+});
+
   
-app.get("/product-accordion", (req, res) => res.render("product-accordion"));
+
 app.get("/product-layout", (req, res) => res.render("product-layout"));
+app.get("/women", (req, res) => res.render("women"));
+  
+  app.get("/women/:subcategory", (req, res) => {
+    const subcategory = req.params.subcategory;
+    const validSubcategories = ["bags", "jumpsuits", "makeup","blouses-tops", "dinner-gowns", "footwears","Jackets", "Jumpsuits", "makeup", "skin-care", "skirts-pants", "two-pieces", "wigs", "jeans"
+    ]; 
+  
+    if (!validSubcategories.includes(subcategory)) {
+      return res.status(404).render("404"); // optional: custom 404 page
+    }
+  
+    res.render(`women/${subcategory}`); 
+  });
+  
+
+
 
 // Start Server
 const PORT = process.env.PORT || 3000;
