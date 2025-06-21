@@ -195,19 +195,26 @@
         </div>
     </div>
 
-    <!-- JavaScript to handle modal behavior a>-->
-    <script>
-        // Show modal on page load
-        window.onload = function () {
-            document.getElementById('coming-soon-modal').style.display = "flex";
-        };
+    
+<script>
+    window.onload = function () {
+        const modal = document.getElementById('coming-soon-modal');
+        const modalShown = localStorage.getItem("modalShown");
 
-        // Close modal when the 'X' is clicked
-        document.querySelector('.close-modal').onclick = function () {
-            document.getElementById('coming-soon-modal').style.display = "none";
-        };
-        
-    </script>
+        console.log("Modal shown previously?", modalShown); // Debug line
+
+        if (!modalShown) {
+            modal.style.display = "flex";
+        }
+    };
+
+    document.querySelector('.close-modal').onclick = function () {
+        document.getElementById('coming-soon-modal').style.display = "none";
+        localStorage.setItem("modalShown", "true");
+        console.log("Modal closed and flag saved."); // Debug line
+    };
+</script>
+
 
 </body>
 
@@ -1316,7 +1323,7 @@
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 order-1 order-md-0 order-lg-0 order-sm-1 copyright text-sm-center text-md-left text-lg-left">
                             <div class="under-footer">
                                 <p>Copyright © 2025 All Rights Reserved.</p>
-                                <p>Design: <a href="https://github.com/byjove19" target="_parent" title="byjove19">Byjove</a></p>
+                                <p>Design: <a href="https://github.com/byjove19" target="_parent" title="byjove19">Byjove Tech</a></p>
                             </div>
                         </div>
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 order-0 order-md-1 order-lg-1 order-sm-0 payment-icons text-right text-md-center">

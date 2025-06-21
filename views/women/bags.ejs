@@ -543,7 +543,7 @@
             </div>
         </div>
         <!--End Parallax Section-->
-        
+        <% products.forEach(product => { %>
         <!--Bestselling Bags-->
         <div class="section">
         	<div class="container">
@@ -557,7 +557,8 @@
                                 <!-- start product image -->
                                 <div class="product-image">
                                     <!-- start product image -->
-                                    <a href="" class="grid-view-item__link">
+                                   <a href="/products/product/slug/<%= product.slug %>" class="grid-view-item__link">
+
                                         <!-- image -->
                                         <img class="primary blur-up lazyload" data-src="/assets2/images/women-bags/bag1.jpg" src="/assets2/image/women-bags/bag1.jpg" alt="" title="">
                                         <!-- End image -->
@@ -1813,7 +1814,7 @@
             </div>
         </div>
         <!--End Bestselling Bags-->
-        
+     <% }); %>   
         
         
         

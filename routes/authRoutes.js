@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
 const User = require('../models/user');
+const passport = require('passport');
 require('dotenv').config();
 
 const router = express.Router();
@@ -91,6 +92,13 @@ router.post('/auth/refresh', (req, res) => {
         res.cookie('sagesilkapp', newAccessToken, { httpOnly: true, maxAge: 15 * 60 * 1000 });
         res.json({ accessToken: newAccessToken });
     });
+});
+
+
+// GET: Dashboard (for logged in users)
+router.get('/dashboard', (req, res) => {
+  if (!req.isAuthenticated()) return res.redirect('/login');
+  res.send(`Welcome, ${req.user.username} (${req.user.role})`);
 });
 
 // **LOGOUT Route**
