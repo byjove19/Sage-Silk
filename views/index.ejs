@@ -226,41 +226,16 @@ input[type="email"] {
 
 <!--Header-->
 <div class="header-wrap classicHeader animated d-flex">
-    <div class="container-fluid">
+    <div class="container-fluid">        
         <div class="row align-items-center">
-            <!-- Desktop Logo -->
+            <!--Desktop Logo-->
             <div class="logo col-md-2 col-lg-2 d-none d-lg-block">
                 <a href="/">
                     <img src="/assets/images/sagesilk.png" alt="Sagesilk" style="max-height: 60px;" />
                 </a>
             </div>
-            <!-- End Desktop Logo -->
-
-            <div class="col-2 col-sm-3 col-md-3 col-lg-8">
-                <!-- Mobile Menu Toggle -->
-                <div class="mobile-menu-toggle d-block d-lg-none">
-                    <button class="hamburger hamburger--slider" type="button" aria-label="Mobile Menu">
-                        <span class="hamburger-box">
-                            <span class="hamburger-inner"></span>
-                        </span>
-                    </button>
-                </div>
-                
-                <!-- Desktop Menu -->
-                <div class="desktop-menu d-none d-lg-block">
-                    <nav class="grid__item" id="AccessibleNav">
-                        <ul id="siteNav" class="site-nav medium center hidearrow">
-                            <li class="lvl1 parent megamenu"><a href="/women">Women's Collection <i class="anm anm-angle-down-l"></i></a></li>
-                            <li class="lvl1 parent megamenu"><a href="/men">Men's Collection <i class="anm anm-angle-down-l"></i></a></li>
-                            <li class="lvl1 parent megamenu"><a href="/kids">Kid's Collection <i class="anm anm-angle-down-l"></i></a></li>
-                            <li class="lvl1 parent megamenu"><a href="/accessories">Accessories <i class="anm anm-angle-down-l"></i></a></li>
-                            <li class="lvl1 parent megamenu"><a href="/wigs">Wigs & Haircare <i class="anm anm-angle-down-l"></i></a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <!-- End Desktop Menu -->
-            </div>
-
+            <!--End Desktop Logo-->
+            
             <!-- Mobile Logo -->
             <div class="col-6 col-sm-6 col-md-6 col-lg-2 d-block d-lg-none mobile-logo">
                 <div class="logo">
@@ -269,24 +244,256 @@ input[type="email"] {
                     </a>
                 </div>
             </div>
+            
+            <div class="col-6 col-sm-6 col-md-6 col-lg-8">
+                <div class="d-block d-lg-none text-right">
+                    <button type="button" class="mobile-menu-toggle">
+                        <i class="icon anm anm-times-l"></i>
+                        <i class="anm anm-bars-r"></i>
+                    </button>
+                </div>
+                
+                <!--Desktop Menu-->
+                <nav class="desktop-menu d-none d-lg-block" id="AccessibleNav">
+                    <ul id="siteNav" class="site-nav medium center hidearrow">
+                        <li class="lvl1 parent megamenu"><a href="/">Home <i class="anm anm-angle-down-l"></i></a></li>
+                        <li class="lvl1 parent megamenu"><a href="/women">Women's Collection <i class="anm anm-angle-down-l"></i></a>
+                            <div class="megamenu style4">
+                                <ul class="grid grid--uniform mmWrapper">
+                                    <!-- Women's Dresses Section -->
+                                    <li class="grid__item lvl-1 col-md-3 col-lg-3">
+                                        <a href="#" class="site-nav lvl-1">Dresses</a>
+                                        <ul class="subLinks">
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Casual Dresses</a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Evening Dresses</a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Formal Dresses</a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Party Dresses</a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Maxi Dresses</a></li>
+                                        </ul>
+                                    </li>
+                                    <!-- Tops & Blouses Section -->
+                                    <li class="grid__item lvl-1 col-md-3 col-lg-3">
+                                        <a href="#" class="site-nav lvl-1">Tops & Blouses</a>
+                                        <ul class="subLinks">
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Blouses <span class="lbl nm_label3">Hot</span></a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">T-Shirts</a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Tunics</a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Sweaters</a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Knitwear</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="grid__item lvl-1 col-md-6 col-lg-6">
+                                        <a href="/women"><img src="/assets2/images/gowns/women-collection (2).jpg" alt="" title="" /></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="lvl1 parent megamenu"><a href="/men">Men's Collection <i class="anm anm-angle-down-l"></i></a>
+                            <div class="megamenu style4">
+                                <ul class="grid grid--uniform mmWrapper">
+                                    <!-- Formal & Business Wear Section -->
+                                    <li class="grid__item lvl-1 col-md-3 col-lg-3">
+                                        <a href="#" class="site-nav lvl-1">Formal & Business Wear</a>
+                                        <ul class="subLinks">
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Formal Suits</a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Blazers</a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Dress Shirts</a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Smart Casuals</a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Formal Footwear</a></li>
+                                        </ul>
+                                    </li>
+                                    <!-- Casual & Seasonal Wear Section -->
+                                    <li class="grid__item lvl-1 col-md-3 col-lg-3">
+                                        <a href="#" class="site-nav lvl-1">Casual & Seasonal Wear</a>
+                                        <ul class="subLinks">
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Knitwear <span class="lbl nm_label3">Hot</span></a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Sweaters</a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">T-Shirts</a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Trousers & Chinos</a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Casual Footwear</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="grid__item lvl-1 col-md-6 col-lg-6">
+                                        <a href="/men"><img src="/assets2/images/men/men-collection.jpg" alt="" title="" /></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="lvl1 parent megamenu"><a href="/kids">Kid's Collection <i class="anm anm-angle-down-l"></i></a>
+                            <div class="megamenu style4">
+                                <ul class="grid grid--uniform mmWrapper">
+                                    <!-- Kid's Clothing Section -->
+                                    <li class="grid__item lvl-1 col-md-3 col-lg-3">
+                                        <a href="#" class="site-nav lvl-1">Kid's Clothing</a>
+                                        <ul class="subLinks">
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Dresses</a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Shirts</a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Blazers</a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Smart Casuals</a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Footwear</a></li>
+                                        </ul>
+                                    </li>
+                                    <!-- Seasonal & Ethnic Wear Section -->
+                                    <li class="grid__item lvl-1 col-md-3 col-lg-3">
+                                        <a href="#" class="site-nav lvl-1">Seasonal & Ethnic Wear</a>
+                                        <ul class="subLinks">
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Knitwear <span class="lbl nm_label3">Hot</span></a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Sweaters</a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">African Prints</a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Trousers & Shorts</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="grid__item lvl-1 col-md-6 col-lg-6">
+                                        <a href="/kids"><img src="/assets2/images/kids/kid-section1.jpg" alt="" title="" /></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="lvl1 parent megamenu"><a href="/accessories">Accessories <i class="anm anm-angle-down-l"></i></a>
+                            <div class="megamenu style4">
+                                <ul class="grid grid--uniform mmWrapper">
+                                    <!-- Fashion Accessories Section -->
+                                    <li class="grid__item lvl-1 col-md-3 col-lg-3">
+                                        <a href="#" class="site-nav lvl-1">Fashion Accessories</a>
+                                        <ul class="subLinks">
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Hats & Caps</a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Belts</a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Jewelry</a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Sunglasses</a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Watches</a></li>
+                                        </ul>
+                                    </li>
+                                    <!-- Beauty Accessories Section -->
+                                    <li class="grid__item lvl-1 col-md-3 col-lg-3">
+                                        <a href="#" class="site-nav lvl-1">Beauty & Hair Accessories</a>
+                                        <ul class="subLinks">
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Hair Accessories <span class="lbl nm_label3">Hot</span></a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Socks & Hosiery</a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Face Masks</a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Perfumes</a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Skincare</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="grid__item lvl-1 col-md-6 col-lg-6">
+                                        <a href="/men"><img src="/assets2/images/women-bags/accesories.jpg" alt="" title="" /></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="lvl1 parent megamenu"><a href="/wigs">Wigs & Haircare <i class="anm anm-angle-down-l"></i></a>
+                            <div class="megamenu style4">
+                                <ul class="grid grid--uniform mmWrapper">
+                                    <!-- Wigs Section -->
+                                    <li class="grid__item lvl-1 col-md-3 col-lg-3">
+                                        <a href="#" class="site-nav lvl-1">Wigs</a>
+                                        <ul class="subLinks">
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Chinese Bone Straight</a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Vietnamese Hair</a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Single Donor Hair</a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Afro Textured Wigs</a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Hair Extensions</a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Wig Caps</a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Combs & Brushes</a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Styling Tools <span class="lbl nm_label3">Hot</span></a></li>
+                                        </ul>
+                                    </li>
+                                    <!-- Haircare Section -->
+                                    <li class="grid__item lvl-1 col-md-3 col-lg-3">
+                                        <a href="#" class="site-nav lvl-1">Haircare</a>
+                                        <ul class="subLinks">
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Shampoos & Conditioners</a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Leave-In Treatments</a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Hair Oils & Serums</a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Heat Protectants</a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Scalp Treatments</a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Hairbands & Clips</a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Storage & Maintenance Kits</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="grid__item lvl-1 col-md-6 col-lg-6">
+                                        <a href="/wigs"><img src="/assets2/images/wigs/wig-section.jpg" alt="" title="" /></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                <!--End Desktop Menu-->
+            </div>
         </div>
     </div>
 </div>
+<!-- Add this overlay element right after your mobile menu -->
+<div class="mobile-overlay"></div>
 
-<!-- Mobile Menu -->
+<!-- Add a menu toggle button in your header -->
+<!-- Add ID to your menu button -->
+<button class="mobile-menu-toggle" id="menuToggle">☰</button>
+
+<!-- Make sure overlay exists -->
+<div class="mobile-overlay"></div>
+
+<!-- Your mobile menu -->
 <div class="mobile-nav-wrapper" role="navigation">
     <div class="closemobileMenu">
-        <i class="icon anm anm-times-l pull-right"></i> Close Menu
+        <span>Close Menu</span>
+        <span class="pull-right">✕</span>
+    </div>
+    <!-- Your menu items -->
+</div>
+
+<!-- Your existing mobile menu (update the close button) -->
+<div class="mobile-nav-wrapper" role="navigation">
+    <div class="closemobileMenu" onclick="closeMobileMenu()">
+        <i class="icon anm anm-times-l pull-right">✕</i> Close Menu
     </div>
     <ul id="MobileNav" class="mobile-nav">
         <li class="lvl1 parent megamenu"><a href="/">Home</a></li>
-        <li class="lvl1 parent megamenu"><a href="/women">Women's Collection</a></li>
         <li class="lvl1 parent megamenu"><a href="/men">Men's Collection</a></li>
         <li class="lvl1 parent megamenu"><a href="/kids">Kid's Collection</a></li>
         <li class="lvl1 parent megamenu"><a href="/accessories">Accessories</a></li>
-        <li class="lvl1 parent megamenu"><a href="/wigs">Wigs & Haircare</a></li>
+        <li class="lvl1 parent megamenu"><a href="/wigs">Wigs And Haircare</a></li>
+        <li class="lvl1 parent megamenu"><a href="/makeup">Cosmetic</a></li>
+        <li class="lvl1 parent megamenu"><a href="/scents">Skincare And Scents</a></li>
     </ul>
 </div>
+
+<!-- Add this JavaScript before closing body tag -->
+<script>
+console.log('Script is loading...');
+
+// Get elements by ID (more reliable than querySelector)
+const menuToggle = document.getElementById('menuToggle');
+const mobileMenu = document.querySelector('.mobile-nav-wrapper');
+const mobileOverlay = document.querySelector('.mobile-overlay');
+
+// Check if elements exist
+console.log('Menu toggle:', menuToggle);
+console.log('Mobile menu:', mobileMenu);
+console.log('Overlay:', mobileOverlay);
+
+// Add event listeners (more reliable than onclick)
+if (menuToggle) {
+    menuToggle.addEventListener('click', function() {
+        console.log('Menu button clicked!');
+        mobileMenu.classList.add('active');
+        mobileOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+}
+
+// Close menu function
+function closeMobileMenu() {
+    console.log('Closing menu...');
+    mobileMenu.classList.remove('active');
+    mobileOverlay.classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
+
+// Add close event listeners
+document.querySelector('.closemobileMenu').addEventListener('click', closeMobileMenu);
+document.querySelector('.mobile-overlay').addEventListener('click', closeMobileMenu);
+</script>
 <!-- ***** Header Area End ***** -->
 <div class="main-banner" id="top">
     <div class="container-fluid">
@@ -1343,40 +1550,7 @@ input[type="email"] {
     };
     
     document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu toggle
-    const hamburger = document.querySelector('.hamburger');
-    const mobileNav = document.querySelector('.mobile-nav-wrapper');
-    const closeMobileMenu = document.querySelector('.closemobileMenu');
-    const mobileOverlay = document.createElement('div');
     
-    // Create overlay element
-    mobileOverlay.className = 'mobile-nav-overlay';
-    document.body.appendChild(mobileOverlay);
-    
-    // Toggle mobile menu
-    function toggleMobileMenu() {
-        hamburger.classList.toggle('is-active');
-        mobileNav.classList.toggle('active');
-        mobileOverlay.classList.toggle('active');
-        document.body.classList.toggle('no-scroll');
-    }
-    
-    // Event listeners
-    if (hamburger) {
-        hamburger.addEventListener('click', toggleMobileMenu);
-    }
-    
-    if (closeMobileMenu) {
-        closeMobileMenu.addEventListener('click', toggleMobileMenu);
-    }
-    
-    mobileOverlay.addEventListener('click', toggleMobileMenu);
-    
-    // Close mobile menu when clicking on a link
-    const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
-    mobileNavLinks.forEach(link => {
-        link.addEventListener('click', toggleMobileMenu);
-    });
     
     // Currency picker functionality
     const currencyPicker = document.querySelector('.currency-picker');
