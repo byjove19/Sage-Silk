@@ -20,6 +20,8 @@ const authRoutes = require("./routes/authRoutes");
 const productRoutes = require("./routes/productRoutes");
 const cartRoutes = require("./routes/cartRoutes");
 
+const categoryRoutes = require("./routes/categoryRoutes");
+
 const app = express();
 const server = http.createServer(app);
 const io = socketIo(server);
@@ -99,6 +101,8 @@ io.on("connection", (socket) => {
 app.use(authRoutes);
 app.use(cartRoutes);
 app.use("/products", productRoutes);
+app.use("/", categoryRoutes);
+
 app.use(adminRoutes);
 
 // Static Pages

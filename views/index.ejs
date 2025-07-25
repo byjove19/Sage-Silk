@@ -60,111 +60,7 @@
     <link rel="stylesheet" href="assets/css/lightbox.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
-    
-    <style>
-        /* General Modal Styles */
-        .modal {
-            display: none; /* Hidden by default */
-            position: fixed;
-            z-index: 1000;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal-content {
-            background: #fff;
-            border-radius: 8px;
-            padding: 20px;
-            text-align: center;
-            width: 90%;
-            max-width: 500px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            position: relative;
-        }
-
-        .modal img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 20px;
-        }
-
-        .modal h2 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            color: #333;
-        }
-
-        .modal p {
-            font-size: 1rem;
-            margin-bottom: 20px;
-            color: #555;
-        }
-
-        .modal input[type="email"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 1rem;
-        }
-
-        .modal .btn {
-            background: #333;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            font-size: 1rem;
-            cursor: pointer;
-        }
-
-        .modal .btn:hover {
-            background: #555;
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 24px;
-            font-weight: bold;
-            color: #333;
-            cursor: pointer;
-        }
-
-        .close-modal:hover {
-            color: #f44336;
-        }
-
-     /* Preloader Styles */
-     #preloader {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: fixed; /* Use fixed for full-page overlay */
-            top: 0;
-            left: 0;
-            width: 100%; /* Full width of the viewport */
-            height: 100%; /* Full height of the viewport */
-            background-color: #fff; /* White background for the loading screen */
-            z-index: 9999; /* Ensure the preloader is on top of all elements */
-        }
-
-        #preloader img {
-            max-width: 200px; /* Adjust the size of the GIF */
-            max-height: 200px;
-            display: block; /* Ensure the GIF is properly displayed */
-        }
-
-    </style>
-</head>
+ 
 
 <body>
     <!-- Preloader -->
@@ -174,57 +70,106 @@
 </body>
 
 
-    <!-- Newsletter Modal -->
-    <div id="coming-soon-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <img src="/assets/images/coming.jpg" alt="Coming Soon">
-            <h2>Sign Up for our exclusive email list and be the first to know about new products and special offers</h2>
-            <form method="post" action="#" id="contact_form">
-                <input type="email" name="contact[email]" placeholder="Email address" required>
-                <button type="submit" class="btn">Follow us for updates!</button>
-            </form>
-            <ul class="list--inline site-footer__social-icons social-icons">
-                <li><a class="social-icons__link" href="#" title="Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
-                <li><a class="social-icons__link" href="#" title="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                <li><a class="social-icons__link" href="#" title="Pinterest"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-                <li><a class="social-icons__link" href="#" title="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                <li><a class="social-icons__link" href="#" title="YouTube"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
-                <li><a class="social-icons__link" href="#" title="Vimeo"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
-              </ul>
-        </div>
+<!-- Newsletter Modal -->
+<div id="coming-soon-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <img src="/assets/images/coming.jpg" alt="Coming Soon">
+        <h2>Sign Up for our exclusive email list and be the first to know about new products and special offers</h2>
+        <form method="post" action="#" id="contact_form">
+            <input type="email" name="contact[email]" placeholder="Email address" required>
+            <button type="submit" class="btn">Follow us for updates!</button>
+        </form>
+        <ul class="list--inline site-footer__social-icons social-icons">
+            <li><a class="social-icons__link" href="#" title="Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+            <li><a class="social-icons__link" href="#" title="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+            <li><a class="social-icons__link" href="#" title="Pinterest"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+            <li><a class="social-icons__link" href="#" title="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+            <li><a class="social-icons__link" href="#" title="YouTube"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+            <li><a class="social-icons__link" href="#" title="Vimeo"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
+        </ul>
     </div>
+</div>
 
-    
-<script>
-    window.onload = function () {
-        const modal = document.getElementById('coming-soon-modal');
-        const modalShown = localStorage.getItem("modalShown");
+<style>
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
 
-        console.log("Modal shown previously?", modalShown); // Debug line
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+}
 
-        if (!modalShown) {
-            modal.style.display = "flex";
-        }
-    };
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
 
-    document.querySelector('.close-modal').onclick = function () {
-        document.getElementById('coming-soon-modal').style.display = "none";
-        localStorage.setItem("modalShown", "true");
-        console.log("Modal closed and flag saved."); // Debug line
-    };
-</script>
+.btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.social-icons {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.social-icons li {
+    display: inline-block;
+}
+
+.social-icons__link {
+    color: #333;
+    font-size: 20px;
+    text-decoration: none;
+}
+</style>
 
 
 </body>
 
-</html>
-
     
- <!-- ***** Header Area Start ***** -->
- <div class="top-header">
+<!-- ***** Header Area Start ***** -->
+<div class="top-header">
     <div class="container-fluid">
-        <div class="row">
+        <div class="row align-items-center">
             <div class="col-10 col-sm-8 col-md-5 col-lg-4">
                 <div class="currency-picker">
                     <span class="selected-currency">USD</span>
@@ -239,9 +184,9 @@
                     </ul>
                 </div>
                 
-                <p class="phone-no"><i class="anm anm-phone-s"></i> Whatsapp  +234 8059307739</p>
+                <p class="phone-no"><i class="anm anm-phone-s"></i> Whatsapp +234 8059307739</p>
             </div>
-            <div class="col-sm-4 col-md-4 col-lg-4 d-none d-lg-none d-md-block d-lg-block">
+            <div class="col-sm-4 col-md-4 col-lg-4 d-none d-md-block">
                 <div class="text-center"><p class="top-header_middle-text"> Worldwide Express Shipping</p></div>
             </div>
             <div class="col-2 col-sm-4 col-md-3 col-lg-4 text-right">
@@ -251,34 +196,34 @@
                             <i class="icon anm anm-search-l"></i>
                         </button>
                     </div>
-                <span class="user-menu d-block d-lg-none">
-                    <i class="anm anm-user-al" aria-hidden="true"></i>
-                </span>
-                <ul class="customer-links list-inline">
-                    <% if (user) { %>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle user-name" data-toggle="dropdown" aria-expanded="false">
-                                <%= user.username %>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/mycart">My Cart</a></li>
-                                <li><a href="/wishlist">My Wishlists</a></li>
-                                <li><a href="/tracking">My Tracking</a></li>
-                                <li><a href="/orders">My Orders</a></li>
-                                <li><a href="/logout">Logout</a></li>
-                            </ul>
-                        </li>
-                    <% } else { %>
-                        <li class="scroll-to-section"><a href="/signup">SignUp/Login</a></li>
-                    <% } %>
-                </ul>
+                    <span class="user-menu d-block d-lg-none">
+                        <i class="anm anm-user-al" aria-hidden="true"></i>
+                    </span>
+                    <ul class="customer-links list-inline">
+                        <% if (user) { %>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle user-name" data-toggle="dropdown" aria-expanded="false">
+                                    <%= user.username %>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/mycart">My Cart</a></li>
+                                    <li><a href="/wishlist">My Wishlists</a></li>
+                                    <li><a href="/tracking">My Tracking</a></li>
+                                    <li><a href="/orders">My Orders</a></li>
+                                    <li><a href="/logout">Logout</a></li>
+                                </ul>
+                            </li>
+                        <% } else { %>
+                            <li class="scroll-to-section"><a href="/signup">SignUp/Login</a></li>
+                        <% } %>
+                    </ul>
                 </div>
             </div>
-            
         </div>
     </div>
 </div>
 <!--End Top Header-->
+
 <!--Header-->
 <div class="header-wrap classicHeader animated d-flex">
     <div class="container-fluid">
@@ -293,15 +238,16 @@
 
             <div class="col-2 col-sm-3 col-md-3 col-lg-8">
                 <!-- Mobile Menu Toggle -->
-                <div class="d-block d-lg-none">
-                    <button type="button" class="btn--link site-header__menu js-mobile-nav-toggle mobile-nav--open">
-                        <i class="icon anm anm-times-l"></i>
-                        <i class="anm anm-bars-r"></i>
+                <div class="mobile-menu-toggle d-block d-lg-none">
+                    <button class="hamburger hamburger--slider" type="button" aria-label="Mobile Menu">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
                     </button>
                 </div>
                 
                 <!-- Desktop Menu -->
-                <div class="d-none d-lg-block">
+                <div class="desktop-menu d-none d-lg-block">
                     <nav class="grid__item" id="AccessibleNav">
                         <ul id="siteNav" class="site-nav medium center hidearrow">
                             <li class="lvl1 parent megamenu"><a href="/women">Women's Collection <i class="anm anm-angle-down-l"></i></a></li>
@@ -309,7 +255,6 @@
                             <li class="lvl1 parent megamenu"><a href="/kids">Kid's Collection <i class="anm anm-angle-down-l"></i></a></li>
                             <li class="lvl1 parent megamenu"><a href="/accessories">Accessories <i class="anm anm-angle-down-l"></i></a></li>
                             <li class="lvl1 parent megamenu"><a href="/wigs">Wigs & Haircare <i class="anm anm-angle-down-l"></i></a></li>
-                            
                         </ul>
                     </nav>
                 </div>
@@ -329,21 +274,19 @@
 </div>
 
 <!-- Mobile Menu -->
-<div class="mobile-nav-wrapper d-lg-none" role="navigation">
+<div class="mobile-nav-wrapper" role="navigation">
     <div class="closemobileMenu">
         <i class="icon anm anm-times-l pull-right"></i> Close Menu
     </div>
     <ul id="MobileNav" class="mobile-nav">
         <li class="lvl1 parent megamenu"><a href="/">Home</a></li>
+        <li class="lvl1 parent megamenu"><a href="/women">Women's Collection</a></li>
         <li class="lvl1 parent megamenu"><a href="/men">Men's Collection</a></li>
         <li class="lvl1 parent megamenu"><a href="/kids">Kid's Collection</a></li>
         <li class="lvl1 parent megamenu"><a href="/accessories">Accessories</a></li>
         <li class="lvl1 parent megamenu"><a href="/wigs">Wigs & Haircare</a></li>
-        <li class="lvl1 parent megamenu"><a href="/makeup">Makeup & Skincare</a></li>
-        <li class="lvl1 parent megamenu"><a href="/scents">Skincare & Scents</a></li>
     </ul>
 </div>
-
 <!-- ***** Header Area End ***** -->
 <div class="main-banner" id="top">
     <div class="container-fluid">
@@ -1323,7 +1266,7 @@
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 order-1 order-md-0 order-lg-0 order-sm-1 copyright text-sm-center text-md-left text-lg-left">
                             <div class="under-footer">
                                 <p>Copyright © 2025 All Rights Reserved.</p>
-                                <p>Design: <a href="https://github.com/byjove19" target="_parent" title="byjove19">Byjove Tech</a></p>
+                                <p>Design: <a href="https://linktr.ee/byjovetech" target="_parent" title="byjovetech">Byjove Tech</a></p>
                             </div>
                         </div>
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 order-0 order-md-1 order-lg-1 order-sm-0 payment-icons text-right text-md-center">
@@ -1373,6 +1316,98 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
 <script>
+        window.onload = function () {
+        const modal = document.getElementById('coming-soon-modal');
+        const lastShown = localStorage.getItem("modalLastShown");
+        const today = new Date().toDateString();
+
+        console.log("Last shown date:", lastShown); // Debug line
+        console.log("Today's date:", today); // Debug line
+
+        // Show modal if it hasn't been shown today
+        if (lastShown !== today) {
+            modal.style.display = "flex";
+            console.log("Showing modal - new day"); // Debug line
+        } else {
+            console.log("Modal already shown today"); // Debug line
+        }
+    };
+
+    document.querySelector('.close-modal').onclick = function () {
+        const modal = document.getElementById('coming-soon-modal');
+        const today = new Date().toDateString();
+        
+        modal.style.display = "none";
+        localStorage.setItem("modalLastShown", today);
+        console.log("Modal closed and today's date saved:", today); // Debug line
+    };
+    
+    document.addEventListener('DOMContentLoaded', function() {
+    // Mobile menu toggle
+    const hamburger = document.querySelector('.hamburger');
+    const mobileNav = document.querySelector('.mobile-nav-wrapper');
+    const closeMobileMenu = document.querySelector('.closemobileMenu');
+    const mobileOverlay = document.createElement('div');
+    
+    // Create overlay element
+    mobileOverlay.className = 'mobile-nav-overlay';
+    document.body.appendChild(mobileOverlay);
+    
+    // Toggle mobile menu
+    function toggleMobileMenu() {
+        hamburger.classList.toggle('is-active');
+        mobileNav.classList.toggle('active');
+        mobileOverlay.classList.toggle('active');
+        document.body.classList.toggle('no-scroll');
+    }
+    
+    // Event listeners
+    if (hamburger) {
+        hamburger.addEventListener('click', toggleMobileMenu);
+    }
+    
+    if (closeMobileMenu) {
+        closeMobileMenu.addEventListener('click', toggleMobileMenu);
+    }
+    
+    mobileOverlay.addEventListener('click', toggleMobileMenu);
+    
+    // Close mobile menu when clicking on a link
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', toggleMobileMenu);
+    });
+    
+    // Currency picker functionality
+    const currencyPicker = document.querySelector('.currency-picker');
+    if (currencyPicker) {
+        const selectedCurrency = currencyPicker.querySelector('.selected-currency');
+        const currencyList = currencyPicker.querySelector('#currencies');
+        
+        selectedCurrency.addEventListener('click', function(e) {
+            e.stopPropagation();
+            currencyList.style.display = currencyList.style.display === 'block' ? 'none' : 'block';
+        });
+        
+        currencyList.querySelectorAll('li').forEach(item => {
+            item.addEventListener('click', function() {
+                const currency = this.getAttribute('data-currency');
+                selectedCurrency.textContent = currency;
+                currencyList.querySelectorAll('li').forEach(li => li.classList.remove('selected'));
+                this.classList.add('selected');
+                currencyList.style.display = 'none';
+                
+                // Here you would typically update the currency on your site
+                // For example: updatePrices(currency);
+            });
+        });
+        
+        // Close when clicking outside
+        document.addEventListener('click', function() {
+            currencyList.style.display = 'none';
+        });
+    }
+});
    $(document).ready(function () {
     
     const preloader = $("#preloader");
