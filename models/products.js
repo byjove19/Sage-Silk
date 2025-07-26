@@ -1,48 +1,57 @@
 const mongoose = require('mongoose');
-
-// Utility to generate slug from name
 const slugify = require('slugify');
 
 const productSchema = new mongoose.Schema({
-    name: { type: String, required: true, trim: true, unique: true },
-    slug: { type: String, unique: true }, 
-    description: { type: String, required: true },
-    price: { type: Number, required: true },
-    category: {
-        type: String,
-        required: true,
-        enum: ['Men', 'Women', 'Kids', 'Makeup', 'Wigs', 'Accessories', 'Skincare', 'Scents']
-    },
-    subcategory: { type: String, required: true },
-    images: {
-        type: [String],
-        validate: {
-            validator: function (arr) {
-                return arr.length === 4;
-            },
-            message: 'Each product must have exactly 4 images.'
-        },
-        required: true
-    },
-    stock: { type: Number, required: true, default: 0 },
-    brand: { type: String },
-    ratings: {
-        average: { type: Number, default: 0 },
-        reviews: [{
-            user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
-            rating: { type: Number, required: true },
-            comment: { type: String }
-        }]
-    },
-    createdAt: { type: Date, default: Date.now }
+  name: {
+    type: String,
+    required: [true, 'Product name is required'],
+    trim: true
+  },
+  slug: {
+    type: String,
+    unique: true
+  },
+  price: {
+    type: Number,
+    required: [true, 'Product price is required'],
+    min: [0, 'Price must be positive']
+  },
+  description: {
+    type: String,
+    required: [true, 'Product description is required']
+  },
+  category: {
+    type: String,
+    required: [true, 'Category is required'],
+    enum: ['Men', 'Women', 'Kids', 'Accessories', 'Wigs', 'Makeup']
+  },
+  subcategory: {
+    type: String,
+    required: [true, 'Subcategory is required']
+  },
+  images: [{
+    type: String,
+    required: [true, 'At least one image is required']
+  }],
+  stock: {
+    type: Number,
+    required: true,
+    default: 0
+  },
+  featured: {
+    type: Boolean,
+    default: false
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now
+  }
 });
 
-// 🔁 Automatically generate slug before saving
-productSchema.pre('save', function (next) {
-    if (!this.isModified('name')) return next();
-    this.slug = slugify(this.name, { lower: true, strict: true });
-    next();
+// Generate slug before saving
+productSchema.pre('save', function(next) {
+  this.slug = slugify(this.name, { lower: true });
+  next();
 });
 
-const Product = mongoose.model('Product', productSchema);
-module.exports = Product;
+module.exports = mongoose.model('Product', productSchema);

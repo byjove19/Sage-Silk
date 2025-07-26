@@ -8,11 +8,25 @@ async function renderCategory(req, res, category, subcategory = null) {
     const query = { category };
     if (subcategory) {
       query.subcategory = subcategory;
+      // Handle case-sensitivity for subcategories
+      query.subcategory = { $regex: new RegExp(`^${subcategory}$`, 'i') };
     }
+    
     const products = await Product.find(query);
-    res.render(`${category.toLowerCase()}${subcategory ? `/${subcategory}` : ''}`, { 
+    
+    if (!products.length && subcategory) {
+      return res.status(404).render('404');
+    }
+    
+    const viewPath = subcategory 
+      ? `${category.toLowerCase()}/${subcategory.toLowerCase()}`
+      : category.toLowerCase();
+      
+    res.render(viewPath, { 
       products, 
-      user: req.user 
+      user: req.user,
+      category,
+      subcategory
     });
   } catch (err) {
     console.error(`Error fetching ${category} products:`, err);
@@ -20,45 +34,43 @@ async function renderCategory(req, res, category, subcategory = null) {
   }
 }
 
-// Men's Collection Routes
+// Main category routes
+router.get("/", (req, res) => res.redirect("/"));
+
+// Men's Collection
 router.get("/men", (req, res) => renderCategory(req, res, "Men"));
-router.get("/men/formal-business", (req, res) => renderCategory(req, res, "Men", "formal-business"));
-router.get("/men/casual-seasonal", (req, res) => renderCategory(req, res, "Men", "casual-seasonal"));
+router.get("/men/:subcategory", (req, res) => 
+  renderCategory(req, res, "Men", req.params.subcategory)
+);
 
-// Women's Collection Routes
+// Women's Collection
 router.get("/women", (req, res) => renderCategory(req, res, "Women"));
-router.get("/women/bags", (req, res) => renderCategory(req, res, "Women", "bags"));
-router.get("/women/jumpsuits", (req, res) => renderCategory(req, res, "Women", "jumpsuits"));
-router.get("/women/makeup", (req, res) => renderCategory(req, res, "Women", "makeup"));
-router.get("/women/blouses-tops", (req, res) => renderCategory(req, res, "Women", "blouses-tops"));
-router.get("/women/dinner-gowns", (req, res) => renderCategory(req, res, "Women", "dinner-gowns"));
-router.get("/women/footwears", (req, res) => renderCategory(req, res, "Women", "footwears"));
-router.get("/women/jackets", (req, res) => renderCategory(req, res, "Women", "jackets"));
-router.get("/women/skin-care", (req, res) => renderCategory(req, res, "Women", "skin-care"));
-router.get("/women/skirts-pants", (req, res) => renderCategory(req, res, "Women", "skirts-pants"));
-router.get("/women/two-pieces", (req, res) => renderCategory(req, res, "Women", "two-pieces"));
-router.get("/women/wigs", (req, res) => renderCategory(req, res, "Women", "wigs"));
-router.get("/women/jeans", (req, res) => renderCategory(req, res, "Women", "jeans"));
-router.get("/women/dresses-and-gowns", (req, res) => renderCategory(req, res, "Women", "dresses-and-gowns"));
+router.get("/women/:subcategory", (req, res) => 
+  renderCategory(req, res, "Women", req.params.subcategory)
+);
 
-// Kid's Collection Routes
-router.get("/kids", (req, res) => renderCategory(req, res, "kids"));
-router.get("/kids/clothing", (req, res) => renderCategory(req, res, "Kids", "clothing"));
-router.get("/kids/seasonal-ethnic", (req, res) => renderCategory(req, res, "Kids", "seasonal-ethnic"));
+// Kids Collection
+router.get("/kids", (req, res) => renderCategory(req, res, "Kids"));
+router.get("/kids/:subcategory", (req, res) => 
+  renderCategory(req, res, "Kids", req.params.subcategory)
+);
 
-// Accessories Routes
+// Accessories
 router.get("/accessories", (req, res) => renderCategory(req, res, "Accessories"));
-router.get("/accessories/fashion", (req, res) => renderCategory(req, res, "Accessories", "fashion"));
-router.get("/accessories/beauty-hair", (req, res) => renderCategory(req, res, "Accessories", "beauty-hair"));
+router.get("/accessories/:subcategory", (req, res) => 
+  renderCategory(req, res, "Accessories", req.params.subcategory)
+);
 
-// Wigs & Haircare Routes
+// Wigs & Haircare
 router.get("/wigs", (req, res) => renderCategory(req, res, "Wigs"));
-router.get("/wigs/wigs", (req, res) => renderCategory(req, res, "Wigs", "wigs"));
-router.get("/wigs/haircare", (req, res) => renderCategory(req, res, "Wigs", "haircare"));
+router.get("/wigs/:subcategory", (req, res) => 
+  renderCategory(req, res, "Wigs", req.params.subcategory)
+);
 
-// Makeup & Skincare Routes
+// Makeup & Skincare
 router.get("/makeup", (req, res) => renderCategory(req, res, "Makeup"));
-router.get("/makeup/makeup", (req, res) => renderCategory(req, res, "Makeup", "makeup"));
-router.get("/makeup/skincare", (req, res) => renderCategory(req, res, "Makeup", "skincare"));
+router.get("/makeup/:subcategory", (req, res) => 
+  renderCategory(req, res, "Makeup", req.params.subcategory)
+);
 
 module.exports = router;
