@@ -122,7 +122,7 @@ app.use((req, res, next) => {
 app.use('/', authRoutes);
 app.use('/cart', cartRoutes);
 app.use('/products', productRoutes);
-app.use('/categories', categoryRoutes); // All category routes now live here
+app.use('/', categoryRoutes); 
 app.use('/admin', adminRoutes);
 
 // Static Pages

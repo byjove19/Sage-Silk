@@ -34,8 +34,6 @@ async function renderCategory(req, res, category, subcategory = null) {
   }
 }
 
-// Main category routes
-router.get("/", (req, res) => res.redirect("/"));
 
 // Men's Collection
 router.get("/men", (req, res) => renderCategory(req, res, "Men"));
