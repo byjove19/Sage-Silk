@@ -1,20 +1,118 @@
-Sage-Silk 🛍️ | Online Clothing Store
-Sage-Silk is a modern online clothing store built with MongoDB, EJS, offering a seamless shopping experience. The platform is designed for efficiency, scalability, and easy product management.
+# Sage-Silk 🛍️
 
-Features ✨
-Dynamic Product Pages – Displays products with images, videos, and descriptions.
-Category & Subcategory Structure – Organized collections for women, men, kids, and accessories with subcategories like dresses, footwear, and jackets.
-Admin Panel – Upload and manage products without modifying backend source code.
-MongoDB Integration – Efficient data storage and retrieval for products and categories.
-EJS Templating – Ensures a smooth and responsive frontend.
-Tech Stack 🚀
-Backend: Node.js, Express, MongoDB, BetterSQLite
-Frontend: EJS, HTML, CSS, JavaScript
-Database: MongoDB for structured category management
-Roadmap 🛠️
-Improve API handling for product queries.
-Enhance the admin panel for bulk uploads.
-Implement user authentication & order tracking.
-🔥 Contribute & Support
-Want to contribute or report a bug? Open an issue or create a pull request!
+**A sleek online clothing store that doesn't suck.**
 
+[🌐 **Live Demo**](https://sagesilk.onrender.com)
+
+![Sage-Silk Homepage](./public/assets/homepage.png)
+
+![Sage-Silk Homepage](./public/assets/homepage2.png)
+
+![Sage-Silk Homepage](./public/assets/homepage3.png)
+
+![Sage-Silk Homepage](./public/assets/homepage4.png)
+
+## What's This About?
+
+Sage-Silk is an online clothing store built for people who want to sell clothes without the headache. Clean design, easy admin panel, and it actually works on mobile (shocking, I know).
+
+## Screenshots
+
+### Storefront
+![Product Gallery](./screenshots/product-gallery.gif)
+*Browse products without wanting to throw your computer out the window*
+
+### Admin Panel
+![Admin Dashboard](./screenshots/admin-panel.png)
+*Add products without touching a single line of code*
+
+### Mobile Experience
+![Mobile View](./screenshots/mobile-view.gif)
+*Looks good on phones too (revolutionary concept)*
+
+## Features That Actually Matter
+
+**For Customers:**
+- Browse products by category (Women, Men, Kids, Accessories)
+- Product pages with images and videos that load fast
+- Works on every device made in the last decade
+
+**For Store Owners:**
+- Upload products through a web interface (no coding required)
+- Organize everything with categories and subcategories
+- Built on MongoDB so it scales when you get famous
+
+**For Developers:**
+- Clean EJS templates that make sense
+- MongoDB integration that doesn't fight you
+- Express.js backend that's actually readable
+
+## Tech Stack
+
+- **Backend:** Node.js + Express (because it works)
+- **Database:** MongoDB + BetterSQLite (belt and suspenders approach)
+- **Frontend:** EJS templates + vanilla CSS/JS (no framework bloat)
+
+## Getting Started
+
+```bash
+# Clone it
+git clone https://github.com/yourusername/sage-silk.git
+cd sage-silk
+
+# Install stuff
+npm install
+
+# Set up your environment
+cp .env.example .env
+# Edit .env with your MongoDB connection
+
+# Run it
+npm run dev
+
+# Visit http://localhost:3000
+```
+
+**Admin panel:** `http://localhost:3000/admin`
+
+## Project Structure
+
+```
+sage-silk/
+├── controllers/     # Where the magic happens
+├── models/         # Database schemas
+├── views/          # EJS templates
+├── public/         # CSS, JS, images
+├── routes/         # URL routing
+└── config/         # Settings and stuff
+```
+
+## What's Coming Next
+
+- [ ] Better API performance (making it faster)
+- [ ] Bulk product uploads (for when you have 500 t-shirts)
+- [ ] User accounts and login
+- [ ] Order tracking
+- [ ] Payment integration (the money part)
+
+
+## Contributing
+
+Found a bug? Have an idea? Cool.
+
+1. Fork this repo
+2. Make your changes
+3. Test it (seriously, test it)
+4. Submit a PR
+
+Or just [open an issue](https://github.com/yourusername/sage-silk/issues) and tell us what's broken.
+
+## License
+
+MIT License - do whatever you want with it.
+
+---
+
+**Made with ☕ and mild frustration with existing e-commerce solutions.**
+
+*Questions? Hit us up at [hello@sagesilk.com](mailto:hello@sagesilk.com)*
