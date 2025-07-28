@@ -27,7 +27,7 @@ Sage-Silk is an online clothing store built for people who want to sell clothes 
 *Add products without touching a single line of code*
 
 ### Modal 
-![Modal View](./public/assets/images/homescreen.png)
+![Modal View](./public/assets/images/homescreenshot.png)
 *Looks good on phones too (revolutionary concept)*
 
 ## Features That Actually Matter
