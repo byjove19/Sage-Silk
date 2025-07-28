@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
-  <g id="Groupe_45" data-name="Groupe 45" transform="translate(-30 -417)">
-    <path id="Tracé_444" data-name="Tracé 444" d="M12.5,0A12.5,12.5,0,1,1,0,12.5,12.5,12.5,0,0,1,12.5,0Z" transform="translate(30 417)" fill="#ccc"/>
-    <g id="croix" transform="translate(132.409 180.584) rotate(45)">
-      <line id="Ligne_36" data-name="Ligne 36" y2="12" transform="translate(112.5 233.5)" fill="none" stroke="#000" stroke-width="1"/>
-      <line id="Ligne_37" data-name="Ligne 37" y2="12" transform="translate(118.5 239.5) rotate(90)" fill="none" stroke="#000" stroke-width="1"/>
-    </g>
-  </g>
-</svg>

@@ -31,17 +31,272 @@
     <link rel="stylesheet" href="/assets2/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets2/css/style.css">
     <link rel="stylesheet" href="/assets2/css/responsive.css">
+    <style>
+        /* Sage & Silk Kids Collection Custom Styles */
+        :root {
+            --sage-primary: #9ca986;
+            --sage-dark: #6b7460;
+            --sage-light: #a8b894;
+            --silk-cream: #f5f3f0;
+            --silk-warm: #e8e4df;
+            --silk-beige: #d4c5b0;
+            --text-dark: #4a5240;
+            --text-light: #7a8268;
+            --pastel-pink: #f8d7d7;
+            --pastel-blue: #d7e3f8;
+            --pastel-green: #d7f8e2;
+            --pastel-yellow: #f8f0d7;
+        }
+
+        /* Kids Collection Hero */
+        .kids-hero {
+            background: linear-gradient(135deg, rgba(248, 215, 215, 0.2) 0%, rgba(215, 227, 248, 0.2) 50%, rgba(215, 248, 226, 0.2) 100%);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .kids-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('/assets2/images/kids/kids-pattern.png');
+            opacity: 0.05;
+            z-index: 0;
+        }
+
+        .kids-hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .kids-hero h1 {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: var(--sage-dark);
+            font-size: 3.5rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .kids-hero p {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .kids-hero .btn {
+            background-color: var(--pastel-pink);
+            color: var(--sage-dark);
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(156, 169, 134, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .kids-hero .btn:hover {
+            background-color: var(--sage-primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(156, 169, 134, 0.3);
+        }
+
+        /* Age Group Cards */
+        .age-group-card {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 2px solid white;
+            position: relative;
+        }
+
+        .age-group-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            border-color: var(--sage-primary);
+        }
+
+        .age-group-card img {
+            transition: transform 0.5s ease;
+        }
+
+        .age-group-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .age-group-card h3 {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            background: rgba(255,255,255,0.8);
+            padding: 10px;
+            margin: 0 20px;
+            border-radius: 10px;
+            text-align: center;
+            color: var(--sage-dark);
+            font-weight: 700;
+        }
+
+        /* Product Cards */
+        .kids-product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 1px solid var(--silk-warm);
+            position: relative;
+        }
+
+        .kids-product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .kids-product-card .product-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--pastel-pink);
+            color: var(--sage-dark);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .kids-product-card .product-image {
+            height: 250px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--silk-cream);
+        }
+
+        .kids-product-card .product-image img {
+            max-height: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .kids-product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .kids-product-card .product-info {
+            padding: 15px;
+        }
+
+        .kids-product-card .product-title {
+            font-size: 1rem;
+            color: var(--sage-dark);
+            font-weight: 600;
+            margin-bottom: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .kids-product-card .product-price {
+            font-weight: 700;
+            color: var(--sage-primary);
+        }
+
+        .kids-product-card .product-price .old-price {
+            text-decoration: line-through;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-right: 5px;
+        }
+
+        /* Category Tabs */
+        .kids-category-tabs .nav-tabs {
+            border-bottom: 2px solid var(--silk-warm);
+            justify-content: center;
+        }
+
+        .kids-category-tabs .nav-link {
+            border: none;
+            color: var(--text-light);
+            font-weight: 600;
+            padding: 10px 25px;
+            margin: 0 5px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .kids-category-tabs .nav-link:hover {
+            color: var(--sage-dark);
+            background-color: var(--silk-cream);
+        }
+
+        .kids-category-tabs .nav-link.active {
+            background-color: var(--sage-primary);
+            color: white;
+        }
+
+        /* Featured Collection */
+        .featured-collection {
+            background-color: var(--pastel-blue);
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .featured-collection::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('/assets2/images/kids/dots-pattern.png');
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .featured-collection-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .kids-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .kids-hero p {
+                font-size: 1rem;
+            }
+            
+            .age-group-card h3 {
+                font-size: 1rem;
+                bottom: 10px;
+                margin: 0 10px;
+            }
+        }
+    </style>
 </head>
 
 <body class="template-index belle home7-shoes">
     <div id="pre-loader">
         <img src="/assets/images/loader.gif" alt="Loading..." />
     </div>
+</div>
     <div class="pageWrapper">
         <!--Search Form Drawer-->
         <div class="search">
             <div class="search__form">
                 <form class="search-bar__form" action="/search" method="GET">
+                    <!-- Search Input -->
                     <input 
                         class="search__input" 
                         type="search" 
@@ -51,15 +306,20 @@
                         autocomplete="off"
                         oninput="showSuggestions(this.value)"
                     />
+                    
+                    <!-- Search Button -->
                     <button class="go-btn search__button" type="submit">
                         <i class="icon anm anm-search-l"></i>
                     </button>
                 </form>
         
+
+                <!-- Suggestions Dropdown -->
                 <div id="suggestions" class="search-suggestions">
                     <!-- Dynamic suggestions will be displayed here -->
                 </div>
         
+                <!-- Close Button -->
                 <button type="button" class="search-trigger close-btn">
                     <i class="anm anm-times-l"></i>
                 </button>
@@ -120,6 +380,7 @@
                         </ul>
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </div>
@@ -146,52 +407,175 @@
                         <div class="row">
                             <nav class="grid__item" id="AccessibleNav">
                                 <ul id="siteNav" class="site-nav medium center hidearrow">
-                                    <li class="lvl1 parent megamenu"><a href="/">Home <i class="anm anm-angle-down-l"></i></a></li>
-                                    <li class="lvl1 parent megamenu"><a href="/women">Women's Collection <i class="anm anm-angle-down-l"></i></a></li>
-                                    <li class="lvl1 parent megamenu"><a href="/kids">Kid's Collection <i class="anm anm-angle-down-l"></i></a>
+                                    <li class="lvl1 parent megamenu"><a href="/">Home <i class="anm anm-angle-down-l"></i></a>
+                                    <li class="lvl1 parent megamenu"><a href="/women">Women's Collection <i class="anm anm-angle-down-l"></i></a>
+                            <div class="megamenu style4">
+                                <ul class="grid grid--uniform mmWrapper">
+                                    <!-- Women's Dresses Section -->
+                                    <li class="grid__item lvl-1 col-md-3 col-lg-3">
+                                        <a href="#" class="site-nav lvl-1">Dresses</a>
+                                        <ul class="subLinks">
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Casual Dresses</a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Evening Dresses</a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Formal Dresses</a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Party Dresses</a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Maxi Dresses</a></li>
+                                        </ul>
+                                    </li>
+                                    <!-- Tops & Blouses Section -->
+                                    <li class="grid__item lvl-1 col-md-3 col-lg-3">
+                                        <a href="#" class="site-nav lvl-1">Tops & Blouses</a>
+                                        <ul class="subLinks">
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Blouses <span class="lbl nm_label3">Hot</span></a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">T-Shirts</a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Tunics</a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Sweaters</a></li>
+                                            <li class="lvl-2"><a href="" class="site-nav lvl-2">Knitwear</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="grid__item lvl-1 col-md-6 col-lg-6">
+                                        <a href="/women"><img src="/assets2/images/gowns/women-collection (2).jpg" alt="" title="" /></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                                       
+                                    </li>
+                                    <li class="lvl1 parent megamenu"><a href="/men">Men's Collection <i class="anm anm-angle-down-l"></i></a>
                                         <div class="megamenu style4">
                                             <ul class="grid grid--uniform mmWrapper">
-                                                <!-- Baby Collection Section -->
+                                                <!-- Formal & Business Wear Section -->
                                                 <li class="grid__item lvl-1 col-md-3 col-lg-3">
-                                                    <a href="#" class="site-nav lvl-1">Baby Collection</a>
+                                                    <a href="#" class="site-nav lvl-1">Formal & Business Wear</a>
                                                     <ul class="subLinks">
-                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Newborn Essentials</a></li>
-                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Onesies & Rompers</a></li>
-                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Baby Dresses</a></li>
-                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Sleepwear</a></li>
-                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Accessories</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Formal Suits</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Blazers</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Dress Shirts</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Smart Casuals</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Formal Footwear</a></li>
                                                     </ul>
                                                 </li>
-                                                <!-- Toddler Collection Section -->
+                                                <!-- Casual & Seasonal Wear Section -->
                                                 <li class="grid__item lvl-1 col-md-3 col-lg-3">
-                                                    <a href="#" class="site-nav lvl-1">Toddler Collection</a>
+                                                    <a href="#" class="site-nav lvl-1">Casual & Seasonal Wear</a>
                                                     <ul class="subLinks">
-                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Playwear <span class="lbl nm_label3">New</span></a></li>
-                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Casual Outfits</a></li>
-                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Dresses & Sets</a></li>
-                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Swimwear</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Knitwear <span class="lbl nm_label3">Hot</span></a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Sweaters</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">T-Shirts</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Trousers & Chinos</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Casual Footwear</a></li>
                                                     </ul>
                                                 </li>
-                                                <!-- Kids Collection Section -->
-                                                <li class="grid__item lvl-1 col-md-3 col-lg-3">
-                                                    <a href="#" class="site-nav lvl-1">Kids Collection</a>
-                                                    <ul class="subLinks">
-                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">School Uniforms</a></li>
-                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Party Wear</a></li>
-                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Seasonal Styles</a></li>
-                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Footwear</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="grid__item lvl-1 col-md-3 col-lg-3">
-                                                    <a href="/kids"><img src="/assets2/images/kids/kid-section1.jpg" alt="Kids Collection" title="Kids Collection" /></a>
+                                    
+                                                <li class="grid__item lvl-1 col-md-6 col-lg-6">
+                                                    <a href="/men"><img src="/assets2/images/men/men-collection.jpg" alt="" title="" /></a>
                                                 </li>
                                             </ul>
                                         </div>
                                     </li>
-                                    <li class="lvl1 parent megamenu"><a href="/accessories">Accessories <i class="anm anm-angle-down-l"></i></a></li>
-                                    <li class="lvl1 parent megamenu"><a href="/wigs">Wigs & Haircare <i class="anm anm-angle-down-l"></i></a></li>
-                                    <li class="lvl1 parent megamenu"><a href="/makeup">Makeup & Skincare <i class="anm anm-angle-down-l"></i></a></li>
-                                </ul>
+                                 
+                                    <li class="lvl1 parent megamenu"><a href="/accessories">Accessories <i class="anm anm-angle-down-l"></i></a>
+                                        <div class="megamenu style4">
+                                            <ul class="grid grid--uniform mmWrapper">
+                                                <!-- Fashion Accessories Section -->
+                                                <li class="grid__item lvl-1 col-md-3 col-lg-3">
+                                                    <a href="#" class="site-nav lvl-1">Fashion Accessories</a>
+                                                    <ul class="subLinks">
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Hats & Caps</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Belts</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Jewelry</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Sunglasses</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Watches</a></li>
+                                                    </ul>
+                                                </li>
+                                                <!-- Beauty Accessories Section -->
+                                                <li class="grid__item lvl-1 col-md-3 col-lg-3">
+                                                    <a href="#" class="site-nav lvl-1">Beauty & Hair Accessories</a>
+                                                    <ul class="subLinks">
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Hair Accessories <span class="lbl nm_label3">Hot</span></a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Socks & Hosiery</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Face Masks</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Perfumes</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Skincare</a></li>
+                                                    </ul>
+                                                </li>
+                                    
+                                                <li class="grid__item lvl-1 col-md-6 col-lg-6">
+                                                    <a href="/men"><img src="/assets2/images/women-bags/accesories.jpg" alt="" title="" /></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="lvl1 parent megamenu"><a href="/wigs">Wigs & Haircare <i class="anm anm-angle-down-l"></i></a>
+                                        <div class="megamenu style4">
+                                            <ul class="grid grid--uniform mmWrapper">
+                                                <!-- Wigs Section -->
+                                                <li class="grid__item lvl-1 col-md-3 col-lg-3">
+                                                    <a href="#" class="site-nav lvl-1">Wigs</a>
+                                                    <ul class="subLinks">
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Chinese Bone Straight</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Vietnamese Hair</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Single Donor Hair</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Afro Textured Wigs</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Hair Extensions</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Wig Caps</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Combs & Brushes</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Styling Tools <span class="lbl nm_label3">Hot</span></a></li>
+                                                    </ul>
+                                                </li>
+                                                <!-- Haircare Section -->
+                                                <li class="grid__item lvl-1 col-md-3 col-lg-3">
+                                                    <a href="#" class="site-nav lvl-1">Haircare</a>
+                                                    <ul class="subLinks">
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Shampoos & Conditioners</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Leave-In Treatments</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Hair Oils & Serums</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Heat Protectants</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Scalp Treatments</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Hairbands & Clips</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Storage & Maintenance Kits</a></li>
+                                                    </ul>
+                                                </li>
+                                    
+                                                <li class="grid__item lvl-1 col-md-6 col-lg-6">
+                                                    <a href="/wigs"><img src="/assets2/images/wigs/wig-section.jpg" alt="" title="" /></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="lvl1 parent megamenu"><a href="/makeup">Makeup & Skincare <i class="anm anm-angle-down-l"></i></a>
+                                        <div class="megamenu style4">
+                                            <ul class="grid grid--uniform mmWrapper">
+                                                <!-- Makeup Section -->
+                                                <li class="grid__item lvl-1 col-md-3 col-lg-3">
+                                                    <a href="#" class="site-nav lvl-1">Makeup</a>
+                                                    <ul class="subLinks">
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Foundations & Primers</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Lipsticks & Glosses</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Eyeshadow & Palettes</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Mascara & Eyeliners</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Blushes & Highlighters</a></li>
+                                                    </ul>
+                                                </li>
+                                                <!-- Skincare Section -->
+                                                <li class="grid__item lvl-1 col-md-3 col-lg-3">
+                                                    <a href="#" class="site-nav lvl-1">Skincare</a>
+                                                    <ul class="subLinks">
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Moisturizers</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Cleansers & Toners</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Face Masks & Treatments</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Sunscreens</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Serums & Oils <span class="lbl nm_label3">Hot</span></a></li>
+                                                    </ul>
+                                                </li>
+                                                
+                                                <li class="grid__item lvl-1 col-md-6 col-lg-6">
+                                                    <a href="/men"><img src="/assets2/images/makeup/makeup-section.jpg" alt="" title="" /></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
                             </nav>
                         </div>
                         <!--End Desktop Menu-->
@@ -205,6 +589,8 @@
                         </div>
                     </div>
                     <!--Mobile Logo-->
+                    
+                    
                 </div>
             </div>
         </div>
@@ -213,90 +599,112 @@
         <div class="mobile-nav-wrapper" role="navigation">
             <div class="closemobileMenu"><i class="icon anm anm-times-l pull-right"></i> Close Menu</div>
             <ul id="MobileNav" class="mobile-nav">
-                <li class="lvl1 parent megamenu"><a href="/">Home <i class=""></i></a></li>
-                <li class="lvl1 parent megamenu"><a href="/women">Women's Collection <i class=""></i></a></li>
-                <li class="lvl1 parent megamenu"><a href="/kids">Kid's Collection <i class=""></i></a></li>
-                <li class="lvl1 parent megamenu"><a href="/accessories">Accessories <i class=""></i></a></li>
-                <li class="lvl1 parent megamenu"><a href="/wigs">Wigs And Haircare <i class=""></i></a></li>
-                <li class="lvl1 parent megamenu"><a href="/makeup">Makeup & Skincare <i class=""></i></a></li>
-            </ul>
+                <li class="lvl1 parent megamenu"><a href="/">Home <i class=""></i></a>
+             
+                <li class="lvl1 parent megamenu"><a href="/men">Men'S Collection <i class=""></i></a>
+                <li class="lvl1 parent megamenu"><a href="/kids">Kid's Collection <i class=""></i></a>
+                <li class="lvl1 parent megamenu"><a href="/accessories">Accessories <i class=""></i></a>
+                <li class="lvl1 parent megamenu"><a href="/wigs">Wigs And Haircare <i class=""></i></a>
+                <li class="lvl1 parent megamenu"><a href="/makeup">Cosmetic <i class=""></i></a>
+                <li class="lvl1 parent megamenu"><a href="/scents">Skincare And Scents <i class=""></i></a>  
+                </li>
         </div>
         <!--End Mobile Menu-->
         
         <!--Body Content-->
         <div id="page-content">
-            <!-- Home Slider -->
-            <div class="slideshow slideshow-wrapper pb-4">
-                <div class="home-slideshow">
-                    <div class="slide">
-                        <div class="blur-up lazyload">
-                            <!-- Desktop Image -->
-                            <img 
-                                class="blur-up lazyload desktop-show" 
-                                data-src="/assets2/images/kids/kids-banner.jpg" 
-                                src="/assets2/images/kids/kids-banner.jpg" 
-                                alt="Adorable Styles for Little Ones" 
-                                title="Adorable Styles for Little Ones" 
-                            />
-                            <!-- Mobile Image -->
-                            <img 
-                                class="blur-up lazyload mobile-show" 
-                                data-src="/assets2/images/kids/kids-banner-mobile.jpg" 
-                                src="/assets2/images/kids/kids-banner-mobile.jpg" 
-                                alt="Adorable Styles for Little Ones" 
-                                title="Adorable Styles for Little Ones" 
-                            />
-                            <!-- Slider Text Content -->
-                            <div class="slideshow__text-wrap slideshow__overlay classic middle">
-                                <div class="slideshow__text-content left">
-                                    <div class="container">
-                                        <div class="wrap-caption left">
-                                            <h2 class="h1 mega-title slideshow__title">Adorable Styles for Little Ones</h2>
-                                            <span class="mega-subtitle slideshow__subtitle">Comfortable, stylish clothes for every adventure</span>
-                                            <a href="#" class="btn">Shop Kid's Collection</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+    <!-- Kids Hero Section -->
+    <section class="kids-hero text-center">
+        <div class="container">
+            <div class="kids-hero-content">
+                <h1>Adorable Styles for Little Ones</h1>
+                <p>Comfortable, stylish clothes for every adventure. Designed with love for your precious ones.</p>
+                <a href="#new-arrivals" class="btn">Shop Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Small Banners -->
+    <div class="section imgBanners pt-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6 pl-0">
+                    <div class="imgBnrOuter">
+                        <div class="inner btmright">
+                            <img data-src="/assets2/images/kids/kids-section.jpg" src="/assets2/images/kids/kids-section.jpg" alt="Baby Collection" class="blur-up lazyload"/>
+                            <div class="ttl">from $20<h5>Baby Collection</h5></div>
                         </div>
-                    </div>
+                    </div>    	
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6 pr-0">
+                    <div class="imgBnrOuter">
+                        <div class="inner btmright">
+                            <img data-src="/assets2/images/kids/toddler.jpg" src="/assets2/images/kids/toddler.jpg" alt="Toddler Outfits" class="blur-up lazyload"/>
+                            <div class="ttl">from $25<h5>Toddler Outfits</h5></div>
+                        </div>
+                    </div>  
+                    <div class="imgBnrOuter mt-4 position-relative">
+                        <!-- Playful Kids Animation Image -->
+                        <div class="kids-animation" style="position: absolute; left: -120px; top: 50%; transform: translateY(-50%); z-index: 10; width: 150px;">
+                            <img src="/assets2/images/kids/kid-section1.jpg" 
+                                 alt="Playful Character" 
+                                 class="img-fluid floating-animation"
+                                 style="animation: floating 3s ease-in-out infinite;">
+                        </div>
+                        
+                        <div class="inner btmright">
+                            <img data-src="/assets2/images/kids/accessories.jpg" src="/assets2/images/kids/accessories.jpg" alt="Kids Accessories" class="blur-up lazyload"/>
+                            <div class="ttl">from $15<h5>Kids Accessories</h5></div>
+                        </div>
+                    </div>  
                 </div>
             </div>
-            <!--End Home slider-->
+        </div>
+    </div>
+    <!--End Small Banners-->
+</div>
+
+<style>
+    /* Floating Animation */
+    @keyframes floating {
+        0%, 100% { transform: translateY(0) rotate(-5deg); }
+        50% { transform: translateY(-15px) rotate(5deg); }
+    }
+    
+    .floating-animation {
+        filter: drop-shadow(0 10px 8px rgba(0,0,0,0.1));
+        transition: all 0.3s ease;
+    }
+    
+    .floating-animation:hover {
+        transform: scale(1.05) rotate(10deg);
+        filter: drop-shadow(0 15px 12px rgba(0,0,0,0.15));
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 1200px) {
+        .kids-animation {
+            left: -100px !important;
+            width: 130px !important;
+        }
+    }
+    
+    @media (max-width: 992px) {
+        .kids-animation {
+            left: -80px !important;
+            width: 110px !important;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .kids-animation {
+            display: none; /* Hide on mobile for better space usage */
+        }
+    }
+</style>
             
-            <!--Small Banners-->
-            <div class="section imgBanners pt-0">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 pl-0">
-                            <div class="imgBnrOuter">
-                                <div class="inner btmright">
-                                    <img data-src="/assets2/images/kids/kids-banner1.jpg" src="/assets2/images/kids/kids-banner1.jpg" alt="Baby Collection" class="blur-up lazyload"/>
-                                    <div class="ttl">from $20<h5>Baby Collection</h5></div>
-                                </div>
-                            </div>    	
-                        </div>
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 pr-0">
-                            <div class="imgBnrOuter">
-                                <div class="inner btmright">
-                                    <img data-src="/assets2/images/kids/kids-banner2.jpg" src="/assets2/images/kids/kids-banner2.jpg" alt="Toddler Outfits" class="blur-up lazyload"/>
-                                    <div class="ttl">from $25<h5>Toddler Outfits</h5></div>
-                                </div>
-                            </div>  
-                            <div class="imgBnrOuter mt-4">
-                                <div class="inner btmright">
-                                    <img data-src="/assets2/images/kids/kids-banner3.jpg" src="/assets2/images/kids/kids-banner3.jpg" alt="Kids Accessories" class="blur-up lazyload"/>
-                                    <div class="ttl">from $15<h5>Kids Accessories</h5></div>
-                                </div>
-                            </div>  
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--End Small Banners-->
-            
-            <!--Collection Tab slider-->
-            <div class="tab-slider-product section">
+            <!-- New Arrivals -->
+            <div class="section kids-category-tabs" id="new-arrivals">
                 <div class="container">
                     <div class="row">
                         <div class="col-12 col-sm-12 col-md-12 col-lg-12">
@@ -304,218 +712,285 @@
                                 <h2 class="h2">New Arrivals</h2>
                                 <p>Browse our latest collection for kids</p>
                             </div>
-                            <div class="tabs-listing">
-                                <ul class="tabs clearfix">
-                                    <li class="active" rel="tab1">Baby</li>
-                                    <li rel="tab2">Toddler</li>
-                                    <li rel="tab3">Kids</li>
-                                </ul>
-                                <div class="tab_container">
-                                    <div id="tab1" class="tab_content grid-products style3">
-                                        <div class="productSlider">
-                                            <div class="col-12 item">
-                                                <!-- product name -->
-                                                <div class="product-name">
-                                                    <a href="product-layout-1.html">Organic Cotton Bodysuit</a>
-                                                </div>
-                                                <!-- End product name -->
-                                                <!-- start product image -->
+                            
+                            <ul class="nav nav-tabs justify-content-center" id="kidsTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="baby-tab" data-toggle="tab" href="#baby" role="tab" aria-controls="baby" aria-selected="true">Baby (0-12m)</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="toddler-tab" data-toggle="tab" href="#toddler" role="tab" aria-controls="toddler" aria-selected="false">Toddler (1-3y)</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="kids-tab" data-toggle="tab" href="#kids" role="tab" aria-controls="kids" aria-selected="false">Kids (4-12y)</a>
+                                </li>
+                            </ul>
+                            
+                            <div class="tab-content" id="kidsTabContent">
+                                <div class="tab-pane fade show active" id="baby" role="tabpanel" aria-labelledby="baby-tab">
+                                    <div class="row mt-4">
+                                        <!-- Baby Product 1 -->
+                                        <div class="col-6 col-md-4 col-lg-3 mb-4">
+                                            <div class="kids-product-card">
+                                                <span class="product-badge">New</span>
                                                 <div class="product-image">
-                                                    <a href="product-layout-1.html">
-                                                        <img class="primary blur-up lazyload" data-src="/assets2/images/kids/products/baby1.jpg" src="/assets2/images/kids/products/baby1.jpg" alt="image" title="product">
-                                                        <img class="hover blur-up lazyload" data-src="/assets2/images/kids/products/baby1-1.jpg" src="/assets2/images/kids/products/baby1-1.jpg" alt="image" title="product">
-                                                        <div class="product-labels rectangular"><span class="lbl pr-label2">New</span></div>
-                                                    </a>
+                                                    <img src="/assets2/images/kids/products/baby1.jpg" alt="Organic Cotton Bodysuit" class="img-fluid">
                                                 </div>
-                                                <!-- end product image -->
-                                                <!-- Start product button -->
-                                                <div class="button-set button-style2">
-                                                    <form class="variants add btn-style2" action="#" method="post">
-                                                        <button class="btn cartIcon btn-addto-cart" type="button" tabindex="0"><i class="icon anm anm-bag-l"></i></button>
-                                                    </form>
-                                                    <a href="javascript:void(0)" title="Quick View" class="btn-style2 quick-view-popup quick-view" data-toggle="modal" data-target="#content_quickview">
-                                                        <i class="icon anm anm-search-plus-r"></i>
-                                                    </a>
-                                                    <div class="wishlist-btn btn-style2">
-                                                        <a class="wishlist add-to-wishlist" href="wishlist.html">
-                                                            <i class="icon anm anm-heart-l"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <!-- end product button -->
-                                                <!--start product details -->
-                                                <div class="product-details text-center">
+                                                <div class="product-info">
+                                                    <h3 class="product-title">Organic Cotton Bodysuit</h3>
                                                     <div class="product-price">
                                                         <span class="price">$24.00</span>
                                                     </div>
-                                                    <div class="product-review">
-                                                        <i class="font-13 fa fa-star"></i>
-                                                        <i class="font-13 fa fa-star"></i>
-                                                        <i class="font-13 fa fa-star"></i>
-                                                        <i class="font-13 fa fa-star"></i>
-                                                        <i class="font-13 fa fa-star-o"></i>
-                                                    </div>
                                                 </div>
-                                                <!-- End product details -->
                                             </div>
-                                            <!-- Repeat similar product blocks for other baby items -->
-                                            <div class="col-12 item">
-                                                <div class="product-name">
-                                                    <a href="product-layout-1.html">Striped Baby Romper</a>
-                                                </div>
+                                        </div>
+                                        
+                                        <!-- Baby Product 2 -->
+                                        <div class="col-6 col-md-4 col-lg-3 mb-4">
+                                            <div class="kids-product-card">
                                                 <div class="product-image">
-                                                    <a href="product-layout-1.html">
-                                                        <img class="primary blur-up lazyload" data-src="/assets2/images/kids/products/baby2.jpg" src="/assets2/images/kids/products/baby2.jpg" alt="image" title="product">
-                                                        <img class="hover blur-up lazyload" data-src="/assets2/images/kids/products/baby2-1.jpg" src="/assets2/images/kids/products/baby2-1.jpg" alt="image" title="product">
-                                                    </a>
+                                                    <img src="/assets2/images/kids/products/baby2.jpg" alt="Striped Baby Romper" class="img-fluid">
                                                 </div>
-                                                <div class="button-set button-style2">
-                                                    <!-- Buttons here -->
-                                                </div>
-                                                <div class="product-details text-center">
+                                                <div class="product-info">
+                                                    <h3 class="product-title">Striped Baby Romper</h3>
                                                     <div class="product-price">
                                                         <span class="price">$28.00</span>
                                                     </div>
-                                                    <div class="product-review">
-                                                        <i class="font-13 fa fa-star"></i>
-                                                        <i class="font-13 fa fa-star"></i>
-                                                        <i class="font-13 fa fa-star"></i>
-                                                        <i class="font-13 fa fa-star"></i>
-                                                        <i class="font-13 fa fa-star"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Baby Product 3 -->
+                                        <div class="col-6 col-md-4 col-lg-3 mb-4">
+                                            <div class="kids-product-card">
+                                                <span class="product-badge">Sale</span>
+                                                <div class="product-image">
+                                                    <img src="/assets2/images/kids/products/baby3.jpg" alt="Soft Jersey Pajama Set" class="img-fluid">
+                                                </div>
+                                                <div class="product-info">
+                                                    <h3 class="product-title">Soft Jersey Pajama Set</h3>
+                                                    <div class="product-price">
+                                                        <span class="old-price">$32.00</span>
+                                                        <span class="price">$25.60</span>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- More baby products -->
+                                        </div>
+                                        
+                                        <!-- Baby Product 4 -->
+                                        <div class="col-6 col-md-4 col-lg-3 mb-4">
+                                            <div class="kids-product-card">
+                                                <div class="product-image">
+                                                    <img src="/assets2/images/kids/products/baby4.jpg" alt="Knit Baby Hat & Mittens" class="img-fluid">
+                                                </div>
+                                                <div class="product-info">
+                                                    <h3 class="product-title">Knit Baby Hat & Mittens</h3>
+                                                    <div class="product-price">
+                                                        <span class="price">$18.00</span>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div id="tab2" class="tab_content grid-products style3">
-                                        <div class="productSlider">
-                                            <div class="col-12 item">
-                                                <div class="product-name">
-                                                    <a href="product-layout-1.html">Toddler Denim Overalls</a>
-                                                </div>
+                                </div>
+                                
+                                <div class="tab-pane fade" id="toddler" role="tabpanel" aria-labelledby="toddler-tab">
+                                    <div class="row mt-4">
+                                        <!-- Toddler Product 1 -->
+                                        <div class="col-6 col-md-4 col-lg-3 mb-4">
+                                            <div class="kids-product-card">
+                                                <span class="product-badge">Bestseller</span>
                                                 <div class="product-image">
-                                                    <a href="product-layout-1.html">
-                                                        <img class="primary blur-up lazyload" data-src="/assets2/images/kids/products/toddler1.jpg" src="/assets2/images/kids/products/toddler1.jpg" alt="image" title="product">
-                                                        <img class="hover blur-up lazyload" data-src="/assets2/images/kids/products/toddler1-1.jpg" src="/assets2/images/kids/products/toddler1-1.jpg" alt="image" title="product">
-                                                        <div class="product-labels rounded"><span class="lbl on-sale">Sale</span></div>
-                                                    </a>
+                                                    <img src="/assets2/images/kids/products/toddler1.jpg" alt="Toddler Denim Overalls" class="img-fluid">
                                                 </div>
-                                                <div class="button-set button-style2">
-                                                    <!-- Buttons here -->
-                                                </div>
-                                                <div class="product-details text-center">
+                                                <div class="product-info">
+                                                    <h3 class="product-title">Toddler Denim Overalls</h3>
                                                     <div class="product-price">
                                                         <span class="old-price">$35.00</span>
                                                         <span class="price">$29.99</span>
                                                     </div>
-                                                    <div class="product-review">
-                                                        <i class="font-13 fa fa-star"></i>
-                                                        <i class="font-13 fa fa-star"></i>
-                                                        <i class="font-13 fa fa-star"></i>
-                                                        <i class="font-13 fa fa-star"></i>
-                                                        <i class="font-13 fa fa-star-half-o"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Toddler Product 2 -->
+                                        <div class="col-6 col-md-4 col-lg-3 mb-4">
+                                            <div class="kids-product-card">
+                                                <div class="product-image">
+                                                    <img src="/assets2/images/kids/products/toddler2.jpg" alt="Cotton Play Dress" class="img-fluid">
+                                                </div>
+                                                <div class="product-info">
+                                                    <h3 class="product-title">Cotton Play Dress</h3>
+                                                    <div class="product-price">
+                                                        <span class="price">$26.00</span>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- More toddler products -->
+                                        </div>
+                                        
+                                        <!-- Toddler Product 3 -->
+                                        <div class="col-6 col-md-4 col-lg-3 mb-4">
+                                            <div class="kids-product-card">
+                                                <div class="product-image">
+                                                    <img src="/assets2/images/kids/products/toddler3.jpg" alt="Striped T-Shirt & Shorts Set" class="img-fluid">
+                                                </div>
+                                                <div class="product-info">
+                                                    <h3 class="product-title">Striped T-Shirt & Shorts Set</h3>
+                                                    <div class="product-price">
+                                                        <span class="price">$30.00</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Toddler Product 4 -->
+                                        <div class="col-6 col-md-4 col-lg-3 mb-4">
+                                            <div class="kids-product-card">
+                                                <span class="product-badge">New</span>
+                                                <div class="product-image">
+                                                    <img src="/assets2/images/kids/products/toddler4.jpg" alt="Fleece Hooded Jacket" class="img-fluid">
+                                                </div>
+                                                <div class="product-info">
+                                                    <h3 class="product-title">Fleece Hooded Jacket</h3>
+                                                    <div class="product-price">
+                                                        <span class="price">$34.00</span>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div id="tab3" class="tab_content grid-products style3">
-                                        <div class="productSlider">
-                                            <div class="col-12 item">
-                                                <div class="product-name">
-                                                    <a href="product-layout-1.html">Kids Graphic T-Shirt</a>
-                                                </div>
+                                </div>
+                                
+                                <div class="tab-pane fade" id="kids" role="tabpanel" aria-labelledby="kids-tab">
+                                    <div class="row mt-4">
+                                        <!-- Kids Product 1 -->
+                                        <div class="col-6 col-md-4 col-lg-3 mb-4">
+                                            <div class="kids-product-card">
                                                 <div class="product-image">
-                                                    <a href="product-layout-1.html">
-                                                        <img class="primary blur-up lazyload" data-src="/assets2/images/kids/products/kids1.jpg" src="/assets2/images/kids/products/kids1.jpg" alt="image" title="product">
-                                                        <img class="hover blur-up lazyload" data-src="/assets2/images/kids/products/kids1-1.jpg" src="/assets2/images/kids/products/kids1-1.jpg" alt="image" title="product">
-                                                    </a>
+                                                    <img src="/assets2/images/kids/products/kids1.jpg" alt="Kids Graphic T-Shirt" class="img-fluid">
                                                 </div>
-                                                <div class="button-set button-style2">
-                                                    <!-- Buttons here -->
-                                                </div>
-                                                <div class="product-details text-center">
+                                                <div class="product-info">
+                                                    <h3 class="product-title">Kids Graphic T-Shirt</h3>
                                                     <div class="product-price">
                                                         <span class="price">$22.00</span>
                                                     </div>
-                                                    <div class="product-review">
-                                                        <i class="font-13 fa fa-star"></i>
-                                                        <i class="font-13 fa fa-star"></i>
-                                                        <i class="font-13 fa fa-star"></i>
-                                                        <i class="font-13 fa fa-star"></i>
-                                                        <i class="font-13 fa fa-star-o"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Kids Product 2 -->
+                                        <div class="col-6 col-md-4 col-lg-3 mb-4">
+                                            <div class="kids-product-card">
+                                                <span class="product-badge">Sale</span>
+                                                <div class="product-image">
+                                                    <img src="/assets2/images/kids/products/kids2.jpg" alt="Denim Jeans with Patches" class="img-fluid">
+                                                </div>
+                                                <div class="product-info">
+                                                    <h3 class="product-title">Denim Jeans with Patches</h3>
+                                                    <div class="product-price">
+                                                        <span class="old-price">$45.00</span>
+                                                        <span class="price">$36.00</span>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- More kids products -->
+                                        </div>
+                                        
+                                        <!-- Kids Product 3 -->
+                                        <div class="col-6 col-md-4 col-lg-3 mb-4">
+                                            <div class="kids-product-card">
+                                                <div class="product-image">
+                                                    <img src="/assets2/images/kids/products/kids3.jpg" alt="Hooded Sweatshirt" class="img-fluid">
+                                                </div>
+                                                <div class="product-info">
+                                                    <h3 class="product-title">Hooded Sweatshirt</h3>
+                                                    <div class="product-price">
+                                                        <span class="price">$32.00</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Kids Product 4 -->
+                                        <div class="col-6 col-md-4 col-lg-3 mb-4">
+                                            <div class="kids-product-card">
+                                                <span class="product-badge">New</span>
+                                                <div class="product-image">
+                                                    <img src="/assets2/images/kids/products/kids4.jpg" alt="Party Dress with Bow" class="img-fluid">
+                                                </div>
+                                                <div class="product-info">
+                                                    <h3 class="product-title">Party Dress with Bow</h3>
+                                                    <div class="product-price">
+                                                        <span class="price">$48.00</span>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>    
-                </div>
-            </div>
-            <!--Collection Tab slider-->
-            
-            <!--Feature Content-->
-            <div class="section feature-content">
-                <div class="container">
-                    <div class="row">
-                        <div class="feature-row">
-                            <!-- Image Section -->
-                            <div class="col-12 col-sm-12 col-md-6 feature-row__item">
-                                <img src="/assets2/images/kids/kids-feature.jpg" alt="Playful & Comfortable Kids Wear" title="Playful & Comfortable Kids Wear" />
-                            </div>
                             
-                            <!-- Text Section -->
-                            <div class="col-12 col-sm-12 col-md-6 feature-row__item feature-row__text--left text-left">
-                                <div class="row-text">
-                                    <h2 class="h2">Playful & Comfortable Kids Wear</h2>
-                                    <div class="rte-setting featured-row__subtext">
-                                        <p>At Sage & Silk, we believe kids should be free to play, explore, and grow in clothes that are as comfortable as they are stylish. Our collection is designed with soft, breathable fabrics that move with your child.</p>
-                                        <p>From adorable baby essentials to trendy outfits for older kids, we've carefully selected each piece to ensure quality, durability, and style. Whether it's for everyday wear, special occasions, or seasonal needs, our kids' collection has something for every little personality.</p>
-                                    </div>
-                                    <a href="#" class="btn">Shop Kid's Collection</a>
-                                </div>
+                            <div class="text-center mt-4">
+                                <a href="/kids/all" class="btn btn-primary">View All Products</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!--End Feature Content-->
+            <!--End New Arrivals-->
+            
+            <!-- Featured Collection -->
+            <section class="featured-collection">
+                <div class="container">
+                    <div class="featured-collection-content">
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <img src="/assets2/images/kids/collection.jpg" alt="Featured Collection" class="img-fluid rounded shadow">
+                            </div>
+                            <div class="col-md-6 mt-4 mt-md-0">
+                                <h2>Spring Collection 2025</h2>
+                                <p class="lead">Bright colors and playful patterns for sunny days ahead. Our spring collection features breathable fabrics and comfortable designs perfect for outdoor adventures.</p>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-check text-success mr-2"></i> 100% Organic Cotton</li>
+                                    <li><i class="fas fa-check text-success mr-2"></i> Eco-friendly Dyes</li>
+                                    <li><i class="fas fa-check text-success mr-2"></i> Machine Washable</li>
+                                    <li><i class="fas fa-check text-success mr-2"></i> Designed for Active Kids</li>
+                                </ul>
+                                <a href="/kids/spring-collection" class="btn btn-light mt-3">Shop Spring Collection</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--End Featured Collection-->
             
             <!--Age Group Section-->
-            <div class="section age-group-section">
+            <div class="section age-group-section py-5">
                 <div class="container">
                     <div class="section-header text-center">
                         <h2 class="h2">Shop By Age Group</h2>
                         <p>Find the perfect outfits for every stage</p>
                     </div>
-                    <div class="row">
-                        <div class="col-12 col-sm-6 col-md-3 age-group-item">
-                            <a href="#">
-                                <img src="/assets2/images/kids/age-0-12.jpg" alt="0-12 Months" class="blur-up lazyload">
+                    <div class="row mt-4">
+                        <div class="col-6 col-sm-6 col-md-3 mb-4">
+                            <a href="/kids/age-0-12" class="age-group-card">
+                                <img src="/assets2/images/kids/age-0-12.jpg" alt="0-12 Months" class="img-fluid w-100">
                                 <h3>0-12 Months</h3>
                             </a>
                         </div>
-                        <div class="col-12 col-sm-6 col-md-3 age-group-item">
-                            <a href="#">
-                                <img src="/assets2/images/kids/age-1-3.jpg" alt="1-3 Years" class="blur-up lazyload">
+                        <div class="col-6 col-sm-6 col-md-3 mb-4">
+                            <a href="/kids/age-1-3" class="age-group-card">
+                                <img src="/assets2/images/kids/age-1-3.jpg" alt="1-3 Years" class="img-fluid w-100">
                                 <h3>1-3 Years</h3>
                             </a>
                         </div>
-                        <div class="col-12 col-sm-6 col-md-3 age-group-item">
-                            <a href="#">
-                                <img src="/assets2/images/kids/age-4-6.jpg" alt="4-6 Years" class="blur-up lazyload">
+                        <div class="col-6 col-sm-6 col-md-3 mb-4">
+                            <a href="/kids/age-4-6" class="age-group-card">
+                                <img src="/assets2/images/kids/age-4-6.jpg" alt="4-6 Years" class="img-fluid w-100">
                                 <h3>4-6 Years</h3>
                             </a>
                         </div>
-                        <div class="col-12 col-sm-6 col-md-3 age-group-item">
-                            <a href="#">
-                                <img src="/assets2/images/kids/age-7-12.jpg" alt="7-12 Years" class="blur-up lazyload">
+                        <div class="col-6 col-sm-6 col-md-3 mb-4">
+                            <a href="/kids/age-7-12" class="age-group-card">
+                                <img src="/assets2/images/kids/age-7-12.jpg" alt="7-12 Years" class="img-fluid w-100">
                                 <h3>7-12 Years</h3>
                             </a>
                         </div>
@@ -524,15 +999,79 @@
             </div>
             <!--End Age Group Section-->
             
-            <!--Instagram Section-->
-            <div class="section instagram-feed-section">
-                <div class="section-header text-center">
-                    <h2 class="h2 heading-font">Follow us On Instagram</h2>
-                    <p>@sage-silk-kids</p>
+            <!-- Why Choose Us -->
+            <div class="section py-5 bg-light">
+                <div class="container">
+                    <div class="section-header text-center">
+                        <h2 class="h2">Why Choose Sage & Silk Kids</h2>
+                        <p>Quality and comfort for your little ones</p>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-md-4 mb-4">
+                            <div class="text-center p-4 h-100" style="background-color: white; border-radius: 15px;">
+                                <div class="mb-3" style="font-size: 2.5rem; color: var(--sage-primary);">
+                                    <i class="fas fa-leaf"></i>
+                                </div>
+                                <h4>Eco-Friendly Materials</h4>
+                                <p>We use organic cotton and sustainable fabrics that are gentle on your child's skin and the environment.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="text-center p-4 h-100" style="background-color: white; border-radius: 15px;">
+                                <div class="mb-3" style="font-size: 2.5rem; color: var(--sage-primary);">
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                                <h4>Thoughtful Designs</h4>
+                                <p>Our clothes are designed with kids in mind - easy to wear, durable, and full of playful details.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="text-center p-4 h-100" style="background-color: white; border-radius: 15px;">
+                                <div class="mb-3" style="font-size: 2.5rem; color: var(--sage-primary);">
+                                    <i class="fas fa-tag"></i>
+                                </div>
+                                <h4>Affordable Prices</h4>
+                                <p>Quality doesn't have to break the bank. We offer competitive prices for premium children's clothing.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!--Instagram ID-->
-                <div id="instafeed" class="imlow_resolution"></div>
-                <!--End Instagram ID-->
+            </div>
+            <!-- End Why Choose Us -->
+            
+            <!--Instagram Section-->
+            <div class="section instagram-feed-section py-5">
+                <div class="container">
+                    <div class="section-header text-center">
+                        <h2 class="h2 heading-font">Follow us On Instagram</h2>
+                        <p>@sage-silk-kids</p>
+                    </div>
+                    <!--Instagram ID-->
+                    <div class="row mt-4" id="instafeed">
+                        <!-- Instagram images will be loaded here -->
+                        <div class="col-6 col-md-3 mb-4">
+                            <a href="#" target="_blank">
+                                <img src="/assets2/images/kids/instagram1.jpg" alt="Instagram Post" class="img-fluid rounded shadow-sm">
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-3 mb-4">
+                            <a href="#" target="_blank">
+                                <img src="/assets2/images/kids/instagram2.jpg" alt="Instagram Post" class="img-fluid rounded shadow-sm">
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-3 mb-4">
+                            <a href="#" target="_blank">
+                                <img src="/assets2/images/kids/instagram3.jpg" alt="Instagram Post" class="img-fluid rounded shadow-sm">
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-3 mb-4">
+                            <a href="#" target="_blank">
+                                <img src="/assets2/images/kids/instagram4.jpg" alt="Instagram Post" class="img-fluid rounded shadow-sm">
+                            </a>
+                        </div>
+                    </div>
+                    <!--End Instagram ID-->
+                </div>
             </div>
             <!--End Instagram Section-->
         </div>
@@ -706,6 +1245,8 @@
     <script src="/assets2/js/popper.min.js"></script>
     <script src="/assets2/js/lazysizes.js"></script>
     <script src="/assets2/js/main.js"></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     
     <script>
         // Sample product data for quick view

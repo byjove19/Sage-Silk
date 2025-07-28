@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken');
+const User = require('../models/user'); // Make sure to import your User model
 
 module.exports = {
     ensureAuthenticated: (req, res, next) => {
@@ -19,33 +20,30 @@ module.exports = {
         }
     },
 
-    ensureAdmin: (req, res, next) => {
+    ensureAdmin: async (req, res, next) => {
         const token = req.cookies.sagesilkapp;
         
         if (!token) {
             return res.redirect('/admin/login');
         }
 
-        jwt.verify(token, process.env.JWT_SECRET, async (err, decoded) => {
-            if (err) {
+        try {
+            const decoded = jwt.verify(token, process.env.JWT_SECRET);
+            const user = await User.findById(decoded.userId); // Changed to findById
+            
+            if (!user || user.role !== 'admin') {
+                req.flash('error', 'Admin access required');
                 res.clearCookie('sagesilkapp');
                 return res.redirect('/admin/login');
             }
-
-            try {
-                const user = await User.findOne({ username: decoded.username });
-                if (!user || user.role !== 'admin') {
-                    req.flash('error', 'Admin access required');
-                    return res.redirect('/admin/login');
-                }
-                
-                req.user = user;
-                res.locals.user = user;
-                next();
-            } catch (error) {
-                console.error('Admin verification error:', error);
-                res.redirect('/admin/login');
-            }
-        });
+            
+            req.user = user;
+            res.locals.user = user;
+            next();
+        } catch (error) {
+            console.error('Admin verification error:', error);
+            res.clearCookie('sagesilkapp');
+            res.redirect('/admin/login');
+        }
     }
 };
