@@ -4,13 +4,13 @@
 
 [🌐 **Live Demo**](https://sagesilk.onrender.com)
 
-![Sage-Silk Homepage](./public/assets/homepage.png)
+![Sage-Silk Homepage](./public/assets/images/homepage.png)
 
-![Sage-Silk Homepage](./public/assets/homepage2.png)
+![Sage-Silk Homepage](./public/assets/images/homepage2.png)
 
-![Sage-Silk Homepage](./public/assets/homepage3.png)
+![Sage-Silk Homepage](./public/assets/images/homepage3.png)
 
-![Sage-Silk Homepage](./public/assets/homepage4.png)
+![Sage-Silk Homepage](./public/assets/images/homepage4.png)
 
 ## What's This About?
 
@@ -19,15 +19,15 @@ Sage-Silk is an online clothing store built for people who want to sell clothes 
 ## Screenshots
 
 ### Storefront
-![Product Gallery](./screenshots/product-gallery.gif)
+![Product Gallery](./public/assets/images/gallery.gif)
 *Browse products without wanting to throw your computer out the window*
 
 ### Admin Panel
-![Admin Dashboard](./screenshots/admin-panel.png)
+![Admin Dashboard](./public/assets/images/admin-login.png)
 *Add products without touching a single line of code*
 
-### Mobile Experience
-![Mobile View](./screenshots/mobile-view.gif)
+### Modal 
+![Modal View](./public/assets/images/homescreen.png)
 *Looks good on phones too (revolutionary concept)*
 
 ## Features That Actually Matter
@@ -50,7 +50,7 @@ Sage-Silk is an online clothing store built for people who want to sell clothes 
 ## Tech Stack
 
 - **Backend:** Node.js + Express (because it works)
-- **Database:** MongoDB + BetterSQLite (belt and suspenders approach)
+- **Database:** MongoDB  (belt and suspenders approach)
 - **Frontend:** EJS templates + vanilla CSS/JS (no framework bloat)
 
 ## Getting Started
@@ -105,7 +105,7 @@ Found a bug? Have an idea? Cool.
 3. Test it (seriously, test it)
 4. Submit a PR
 
-Or just [open an issue](https://github.com/yourusername/sage-silk/issues) and tell us what's broken.
+Or just [open an issue](https://github.com/byjove19/sage-silk/issues) and tell us what's broken.
 
 ## License
 
@@ -115,4 +115,4 @@ MIT License - do whatever you want with it.
 
 **Made with ☕ and mild frustration with existing e-commerce solutions.**
 
-*Questions? Hit us up at [hello@sagesilk.com](mailto:hello@sagesilk.com)*
+*Questions? Hit us up at [hello@sagesilk.com](mailto:odionyejovy@gmail.com)*
