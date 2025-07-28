@@ -2,7 +2,7 @@
 
 **A sleek online clothing store that doesn't suck.**
 
-[🌐 **Live Demo**](https://sagesilk.onrender.com)
+[🌐 **Sage And Silk**](https://sagesilk.onrender.com)
 
 ![Sage-Silk Homepage](./public/assets/images/homepage.png)
 
