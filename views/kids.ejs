@@ -624,10 +624,11 @@
         </div>
     </section>
 
-    <!-- Small Banners -->
+    <!-- Four Banner Sections -->
     <div class="section imgBanners pt-0">
         <div class="container">
             <div class="row">
+                <!-- Banner 1 -->
                 <div class="col-12 col-sm-12 col-md-6 col-lg-6 pl-0">
                     <div class="imgBnrOuter">
                         <div class="inner btmright">
@@ -636,6 +637,8 @@
                         </div>
                     </div>    	
                 </div>
+                
+                <!-- Banner 2 -->
                 <div class="col-12 col-sm-12 col-md-6 col-lg-6 pr-0">
                     <div class="imgBnrOuter">
                         <div class="inner btmright">
@@ -643,62 +646,51 @@
                             <div class="ttl">from $25<h5>Toddler Outfits</h5></div>
                         </div>
                     </div>  
-                    <div class="imgBnrOuter mt-4 position-relative">
-                        <!-- Playful Kids Animation Image -->
-                        <div class="kids-animation" style="position: absolute; left: -120px; top: 50%; transform: translateY(-50%); z-index: 10; width: 150px;">
-                            <img src="/assets2/images/kids/kid-section1.jpg" 
-                                 alt="Playful Character" 
-                                 class="img-fluid floating-animation"
-                                 style="animation: floating 3s ease-in-out infinite;">
-                        </div>
-                        
+                </div>
+                
+                <!-- Banner 3 (New) -->
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6 pl-0 mt-4">
+                    <div class="imgBnrOuter">
                         <div class="inner btmright">
-                            <img data-src="/assets2/images/kids/accessories.jpg" src="/assets2/images/kids/accessories.jpg" alt="Kids Accessories" class="blur-up lazyload"/>
-                            <div class="ttl">from $15<h5>Kids Accessories</h5></div>
+                            <img data-src="/assets2/images/kids/accessories.jpg" src="/assets2/images/kids/accessories.jpg" alt="Boys Collection" class="blur-up lazyload"/>
+                            <div class="ttl">from $22<h5>Boys Collection</h5></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Banner 4 (New) -->
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6 pr-0 mt-4">
+                    <div class="imgBnrOuter">
+                        <div class="inner btmright">
+                            <img data-src="/assets2/images/kids/kid-section1.jpg" src="/assets2/images/kids/kid-section1.jpg" alt="Girls Collection" class="blur-up lazyload"/>
+                            <div class="ttl">from $24<h5>Girls Collection</h5></div>
                         </div>
                     </div>  
                 </div>
             </div>
         </div>
     </div>
-    <!--End Small Banners-->
+    <!--End Four Banner Sections-->
 </div>
 
 <style>
-    /* Floating Animation */
-    @keyframes floating {
-        0%, 100% { transform: translateY(0) rotate(-5deg); }
-        50% { transform: translateY(-15px) rotate(5deg); }
+    /* Adjust spacing for the four-banner layout */
+    @media (min-width: 768px) {
+        .imgBnrOuter {
+            margin-bottom: 15px;
+        }
     }
     
-    .floating-animation {
-        filter: drop-shadow(0 10px 8px rgba(0,0,0,0.1));
-        transition: all 0.3s ease;
-    }
-    
-    .floating-animation:hover {
-        transform: scale(1.05) rotate(10deg);
-        filter: drop-shadow(0 15px 12px rgba(0,0,0,0.15));
+    /* Ensure consistent heights */
+    .imgBnrOuter .inner {
+        height: 100%;
     }
     
     /* Responsive adjustments */
-    @media (max-width: 1200px) {
-        .kids-animation {
-            left: -100px !important;
-            width: 130px !important;
-        }
-    }
-    
-    @media (max-width: 992px) {
-        .kids-animation {
-            left: -80px !important;
-            width: 110px !important;
-        }
-    }
-    
-    @media (max-width: 768px) {
-        .kids-animation {
-            display: none; /* Hide on mobile for better space usage */
+    @media (max-width: 767px) {
+        .pl-0, .pr-0 {
+            padding-left: 15px !important;
+            padding-right: 15px !important;
         }
     }
 </style>
