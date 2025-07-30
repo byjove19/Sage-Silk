@@ -9,7 +9,6 @@ const http = require('http');
 const { Server } = require('socket.io');
 const cors = require('cors');
 const passport = require('passport');
-const { OpenAI } = require('openai');
 const flash = require('connect-flash');
 
 // Database and Models
@@ -36,10 +35,6 @@ requiredEnvVars.forEach(envVar => {
   }
 });
 
-// Initialize OpenAI only if API key exists
-const openai = process.env.OPENAI_API_KEY 
-  ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY }) 
-  : null;
 
 // Middleware Configuration
 app.set('view engine', 'ejs');
@@ -84,35 +79,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// WebSocket Chatbot
-if (openai) {
-  io.on('connection', (socket) => {
-    console.log('A user connected');
 
-    socket.on('user message', async (msg) => {
-      try {
-        const response = await openai.chat.completions.create({
-          model: 'gpt-3.5-turbo',
-          messages: [
-            { 
-              role: 'system', 
-              content: 'You are a helpful assistant for an online clothing store called Sage and Silk.' 
-            },
-            { role: 'user', content: msg },
-          ],
-        });
-        socket.emit('bot message', response.choices[0].message.content);
-      } catch (error) {
-        console.error('OpenAI Error:', error);
-        socket.emit('bot message', "Sorry, I'm having trouble responding right now.");
-      }
-    });
-
-    socket.on('disconnect', () => console.log('User disconnected'));
-  });
-} else {
-  console.warn('OpenAI integration disabled - missing API key');
-}
 // Logging Middleware
 app.use((req, res, next) => {
   console.log(`Incoming: ${req.method} ${req.url}`);
