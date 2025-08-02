@@ -6,7 +6,6 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const jwt = require('jsonwebtoken');
 const http = require('http');
-const { Server } = require('socket.io');
 const cors = require('cors');
 const passport = require('passport');
 const flash = require('connect-flash');
@@ -24,7 +23,6 @@ const categoryRoutes = require('./routes/categoryRoutes');
 
 const app = express();
 const server = http.createServer(app);
-const io = new Server(server);
 
 // Validate required environment variables
 const requiredEnvVars = ['JWT_SECRET', 'SESSION_SECRET', 'REFRESH_SECRET'];
@@ -98,6 +96,8 @@ app.get('/welcome', (req, res) => res.render('welcome', { username: req.user?.us
 app.get('/about', (req, res) => res.render('about'));
 app.get('/contact', (req, res) => res.render('contact'));
 app.get('/wishlist', (req, res) => res.render('wishlist'));
+app.get('/FAQ', (req, res) => res.render('FAQ'));
+app.get('/size-guide', (req, res) => res.render('size-guide'));
 app.get('/checkout', (req, res) => res.render('checkout', { cartItems: req.session.cart || [] }));
 app.get('/404', (req, res) => res.render('404'));
 

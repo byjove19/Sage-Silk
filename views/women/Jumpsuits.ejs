@@ -22,6 +22,7 @@
             <img src="/assets/images/loader.gif" alt="Loading..." />
         </div>
     </div>
+    </body>
     <div class="pageWrapper">
         <!--Search Form Drawer-->
         <div class="search">
@@ -51,26 +52,43 @@
                                 <li data-currency="JPY" class="">JPY</li>
                             </ul>
                         </div>
-                        <div class="language-dropdown">
-                            <span class="language-dd">English</span>
-                            <ul id="language">
-                                <li class="">German</li>
-                                <li class="">French</li>
-                            </ul>
-                        </div>
-                        <p class="phone-no"><i class="anm anm-phone-s"></i> whatsapp  234 8059307739</p>
+                        
+                        <p class="phone-no"><i class="anm anm-phone-s"></i> Whatsapp  +234 8059307739</p>
                     </div>
                     <div class="col-sm-4 col-md-4 col-lg-4 d-none d-lg-none d-md-block d-lg-block">
                         <div class="text-center"><p class="top-header_middle-text"> Worldwide Express Shipping</p></div>
                     </div>
                     <div class="col-2 col-sm-4 col-md-3 col-lg-4 text-right">
-                        <span class="user-menu d-block d-lg-none"><i class="anm anm-user-al" aria-hidden="true"></i></span>
+                        <div class="site-header d-flex justify-content-end align-items-center">
+                            <div class="site-header__search">
+                                <button type="button" class="search-trigger">
+                                    <i class="icon anm anm-search-l"></i>
+                                </button>
+                            </div>
+                        <span class="user-menu d-block d-lg-none">
+                            <i class="anm anm-user-al" aria-hidden="true"></i>
+                        </span>
                         <ul class="customer-links list-inline">
-                            <li><a href="/login.ejs">Login</a></li>
-                            <li><a href="/register.ejs">Create Account</a></li>
-                            <li><a href="/wishlist.ejs">Wishlist</a></li>
+                            <% if (user) { %>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle user-name" data-toggle="dropdown" aria-expanded="false">
+                                        <%= user.username %>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="/mycart">My Cart</a></li>
+                                        <li><a href="/wishlist">My Wishlists</a></li>
+                                        <li><a href="/tracking">My Tracking</a></li>
+                                        <li><a href="/orders">My Orders</a></li>
+                                        <li><a href="/logout">Logout</a></li>
+                                    </ul>
+                                </li>
+                            <% } else { %>
+                                <li class="scroll-to-section"><a href="/signup">SignUp/Login</a></li>
+                            <% } %>
                         </ul>
+                        </div>
                     </div>
+                    
                 </div>
             </div>
         </div>
@@ -94,11 +112,178 @@
                             </button>
                         </div>
                         <!--Desktop Menu-->
-                        <nav class="grid__item" id="AccessibleNav"><!-- for mobile -->
-                            <ul id="siteNav" class="site-nav medium center hidearrow">
-                                
-                        
-                        </nav>
+                        <div class="row">
+                            <nav class="grid__item" id="AccessibleNav">
+                                <ul id="siteNav" class="site-nav medium center hidearrow">
+                                    <li class="lvl1 parent megamenu"><a href="/">Home <i class="anm anm-angle-down-l"></i></a>
+                                       
+                                    </li>
+                                    <li class="lvl1 parent megamenu"><a href="/men">Men's Collection <i class="anm anm-angle-down-l"></i></a>
+                                        <div class="megamenu style4">
+                                            <ul class="grid grid--uniform mmWrapper">
+                                                <!-- Formal & Business Wear Section -->
+                                                <li class="grid__item lvl-1 col-md-3 col-lg-3">
+                                                    <a href="#" class="site-nav lvl-1">Formal & Business Wear</a>
+                                                    <ul class="subLinks">
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Formal Suits</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Blazers</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Dress Shirts</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Smart Casuals</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Formal Footwear</a></li>
+                                                    </ul>
+                                                </li>
+                                                <!-- Casual & Seasonal Wear Section -->
+                                                <li class="grid__item lvl-1 col-md-3 col-lg-3">
+                                                    <a href="#" class="site-nav lvl-1">Casual & Seasonal Wear</a>
+                                                    <ul class="subLinks">
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Knitwear <span class="lbl nm_label3">Hot</span></a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Sweaters</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">T-Shirts</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Trousers & Chinos</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Casual Footwear</a></li>
+                                                    </ul>
+                                                </li>
+                                    
+                                                <li class="grid__item lvl-1 col-md-6 col-lg-6">
+                                                    <a href="/men"><img src="/assets2/images/men/men-collection.jpg" alt="" title="" /></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="lvl1 parent megamenu"><a href="/kids">Kid's Collection <i class="anm anm-angle-down-l"></i></a>
+                                        <div class="megamenu style4">
+                                            <ul class="grid grid--uniform mmWrapper">
+                                                <!-- Kid's Clothing Section -->
+                                                <li class="grid__item lvl-1 col-md-3 col-lg-3">
+                                                    <a href="#" class="site-nav lvl-1">Kid's Clothing</a>
+                                                    <ul class="subLinks">
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Dresses</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Shirts</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Blazers</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Smart Casuals</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Footwear</a></li>
+                                                    </ul>
+                                                </li>
+                                                <!-- Seasonal & Ethnic Wear Section -->
+                                                <li class="grid__item lvl-1 col-md-3 col-lg-3">
+                                                    <a href="#" class="site-nav lvl-1">Seasonal & Ethnic Wear</a>
+                                                    <ul class="subLinks">
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Knitwear <span class="lbl nm_label3">Hot</span></a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Sweaters</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">African Prints</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Trousers & Shorts</a></li>
+                                                    </ul>
+                                                </li>
+                                    
+                                                <li class="grid__item lvl-1 col-md-6 col-lg-6">
+                                                    <a href="/kids"><img src="/assets2/images/kids/kid-section1.jpg" alt="" title="" /></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="lvl1 parent megamenu"><a href="/accessories">Accessories <i class="anm anm-angle-down-l"></i></a>
+                                        <div class="megamenu style4">
+                                            <ul class="grid grid--uniform mmWrapper">
+                                                <!-- Fashion Accessories Section -->
+                                                <li class="grid__item lvl-1 col-md-3 col-lg-3">
+                                                    <a href="#" class="site-nav lvl-1">Fashion Accessories</a>
+                                                    <ul class="subLinks">
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Hats & Caps</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Belts</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Jewelry</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Sunglasses</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Watches</a></li>
+                                                    </ul>
+                                                </li>
+                                                <!-- Beauty Accessories Section -->
+                                                <li class="grid__item lvl-1 col-md-3 col-lg-3">
+                                                    <a href="#" class="site-nav lvl-1">Beauty & Hair Accessories</a>
+                                                    <ul class="subLinks">
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Hair Accessories <span class="lbl nm_label3">Hot</span></a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Socks & Hosiery</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Face Masks</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Perfumes</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Skincare</a></li>
+                                                    </ul>
+                                                </li>
+                                    
+                                                <li class="grid__item lvl-1 col-md-6 col-lg-6">
+                                                    <a href="/men"><img src="/assets2/images/women-bags/accesories.jpg" alt="" title="" /></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="lvl1 parent megamenu"><a href="/wigs">Wigs & Haircare <i class="anm anm-angle-down-l"></i></a>
+                                        <div class="megamenu style4">
+                                            <ul class="grid grid--uniform mmWrapper">
+                                                <!-- Wigs Section -->
+                                                <li class="grid__item lvl-1 col-md-3 col-lg-3">
+                                                    <a href="#" class="site-nav lvl-1">Wigs</a>
+                                                    <ul class="subLinks">
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Chinese Bone Straight</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Vietnamese Hair</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Single Donor Hair</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Afro Textured Wigs</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Hair Extensions</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Wig Caps</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Combs & Brushes</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Styling Tools <span class="lbl nm_label3">Hot</span></a></li>
+                                                    </ul>
+                                                </li>
+                                                <!-- Haircare Section -->
+                                                <li class="grid__item lvl-1 col-md-3 col-lg-3">
+                                                    <a href="#" class="site-nav lvl-1">Haircare</a>
+                                                    <ul class="subLinks">
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Shampoos & Conditioners</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Leave-In Treatments</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Hair Oils & Serums</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Heat Protectants</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Scalp Treatments</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Hairbands & Clips</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Storage & Maintenance Kits</a></li>
+                                                    </ul>
+                                                </li>
+                                    
+                                                <li class="grid__item lvl-1 col-md-6 col-lg-6">
+                                                    <a href="/wigs"><img src="/assets2/images/wigs/wig-section.jpg" alt="" title="" /></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="lvl1 parent megamenu"><a href="/makeup">Makeup & Skincare <i class="anm anm-angle-down-l"></i></a>
+                                        <div class="megamenu style4">
+                                            <ul class="grid grid--uniform mmWrapper">
+                                                <!-- Makeup Section -->
+                                                <li class="grid__item lvl-1 col-md-3 col-lg-3">
+                                                    <a href="#" class="site-nav lvl-1">Makeup</a>
+                                                    <ul class="subLinks">
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Foundations & Primers</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Lipsticks & Glosses</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Eyeshadow & Palettes</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Mascara & Eyeliners</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Blushes & Highlighters</a></li>
+                                                    </ul>
+                                                </li>
+                                                <!-- Skincare Section -->
+                                                <li class="grid__item lvl-1 col-md-3 col-lg-3">
+                                                    <a href="#" class="site-nav lvl-1">Skincare</a>
+                                                    <ul class="subLinks">
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Moisturizers</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Cleansers & Toners</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Face Masks & Treatments</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Sunscreens</a></li>
+                                                        <li class="lvl-2"><a href="" class="site-nav lvl-2">Serums & Oils <span class="lbl nm_label3">Hot</span></a></li>
+                                                    </ul>
+                                                </li>
+                                                
+                                                <li class="grid__item lvl-1 col-md-6 col-lg-6">
+                                                    <a href="/men"><img src="/assets2/images/makeup/makeup-section.jpg" alt="" title="" /></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                            </nav>
+                        </div>
                         <!--End Desktop Menu-->
                     </div>
                     <!--Mobile Logo-->
@@ -110,33 +295,7 @@
                         </div>
                     </div>
                     <!--Mobile Logo-->
-                    <div class="col-4 col-sm-3 col-md-3 col-lg-2">
-                        <div class="site-cart">
-                            <a href="#" class="site-header__cart" title="Cart">
-                                <i class="icon anm anm-bag-l"></i>
-                                <span id="CartCount" class="site-header__cart-count">0</span>
-                            </a>
-                            <!--Minicart Popup-->
-                            <div id="header-cart" class="block block-cart" style="display: none;">
-                                <ul class="mini-products-list" id="mini-cart-items">
-                                    <!-- Cart items will be dynamically added here -->
-                                </ul>
-                                <div class="total">
-                                    <div class="total-in">
-                                        <span class="label">Cart Subtotal:</span>
-                                        <span id="cart-subtotal" class="product-price"><span class="money">$0.00</span></span>
-                                    </div>
-                                    <div class="buttonSet text-center">
-                                        <a href="/mycart" class="btn btn-secondary btn--small">View Cart</a>
-                                        <a href="/checkout" class="btn btn-secondary btn--small">Checkout</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--End Minicart Popup-->
-                        </div>
-                        <div class="site-header__search">
-                            <button type="button" class="search-trigger"><i class="icon anm anm-search-l"></i></button>
-                        </div>
+        
                     </div>
                 </div>
             </div>
@@ -158,6 +317,7 @@
     </div>
     <!--End Mobile Menu-->
     <!--Body Content-->
+
     <div id="page-content">
     	<!--Collection Banner-->
     	<div class="collection-header">

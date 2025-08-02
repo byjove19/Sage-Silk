@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>500 - Server Error | Sage & Silk</title>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #f5f3f0 0%, #e8e4df 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 800px;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .fabric-piece {
+            position: absolute;
+            opacity: 0.6;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .fabric-piece:nth-child(1) {
+            top: 10%;
+            left: 10%;
+            width: 60px;
+            height: 40px;
+            background: linear-gradient(45deg, #9ca986, #a8b894);
+            border-radius: 20px;
+            animation-delay: 0s;
+            transform: rotate(15deg);
+        }
+
+        .fabric-piece:nth-child(2) {
+            top: 20%;
+            right: 15%;
+            width: 80px;
+            height: 30px;
+            background: linear-gradient(45deg, #d4c5b0, #c7b299);
+            border-radius: 15px;
+            animation-delay: 2s;
+            transform: rotate(-10deg);
+        }
+
+        .fabric-piece:nth-child(3) {
+            bottom: 20%;
+            left: 20%;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, #8b9474, #96a082);
+            border-radius: 25px;
+            animation-delay: 4s;
+            transform: rotate(25deg);
+        }
+
+        .fabric-piece:nth-child(4) {
+            bottom: 30%;
+            right: 10%;
+            width: 70px;
+            height: 35px;
+            background: linear-gradient(45deg, #c9ba9b, #b8a988);
+            border-radius: 18px;
+            animation-delay: 1s;
+            transform: rotate(-20deg);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(var(--rotation, 0deg)); }
+            50% { transform: translateY(-20px) rotate(calc(var(--rotation, 0deg) + 5deg)); }
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: #6b7460;
+            margin-bottom: 2rem;
+            letter-spacing: 3px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .error-number {
+            font-size: 12rem;
+            font-weight: 100;
+            color: #9ca986;
+            line-height: 1;
+            margin: 1rem 0;
+            animation: bounceIn 1.2s ease-out 0.3s both;
+            text-shadow: 0 10px 30px rgba(156, 169, 134, 0.3);
+        }
+
+        .error-title {
+            font-size: 2.5rem;
+            color: #5a6249;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .error-message {
+            font-size: 1.2rem;
+            color: #7a8268;
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+            animation: fadeInUp 1s ease-out 0.9s both;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 1.2s both;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #9ca986, #a8b894);
+            color: white;
+            box-shadow: 0 8px 25px rgba(156, 169, 134, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #6b7460;
+            border: 2px solid #9ca986;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(156, 169, 134, 0.4);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(45deg, #8b9474, #96a082);
+        }
+
+        .btn-secondary:hover {
+            background: #9ca986;
+            color: white;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .decorative-line {
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #9ca986, transparent);
+            margin: 2rem auto;
+            animation: slideIn 1s ease-out 1.5s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+            70% {
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .logo {
+                font-size: 2rem;
+            }
+            
+            .error-number {
+                font-size: 8rem;
+            }
+            
+            .error-title {
+                font-size: 2rem;
+            }
+            
+            .error-message {
+                font-size: 1rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #9ca986;
+            border-radius: 50%;
+            opacity: 0.4;
+            animation: particleFloat 8s linear infinite;
+        }
+
+        @keyframes particleFloat {
+            0% {
+                transform: translateY(100vh) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.4;
+            }
+            90% {
+                opacity: 0.4;
+            }
+            100% {
+                transform: translateY(-100px) translateX(100px);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+  <div class="floating-elements">
+    <div class="fabric-piece"></div>
+    <div class="fabric-piece"></div>
+    <div class="fabric-piece"></div>
+    <div class="fabric-piece"></div>
+  </div>
+
+  <div class="particles" id="particles"></div>
+
+  <div class="container">
+    <h1 class="logo">SAGE & SILK</h1>
+
+    <div class="error-number">500</div>
+
+    <h2 class="error-title">A Tangled Thread</h2>
+
+    <p class="error-message">
+      Our servers seem to have gotten caught in a knot. Something unexpected happened behind the scenes. We're working to smooth things out like fine silk.
+    </p>
+
+    <div class="decorative-line"></div>
+
+    <div class="cta-buttons">
+      <a href="/" class="btn btn-primary">
+        <span>Return Home</span>
+        <span>→</span>
+      </a>
+      <a href="mailto:support@sagesilk.com" class="btn btn-secondary">
+        <span>Contact Support</span>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    // same floating particles and animations as your 404
+    function createParticles() {
+      const particlesContainer = document.getElementById('particles');
+      const particleCount = 15;
+
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 8 + 's';
+        particle.style.animationDuration = (Math.random() * 4 + 6) + 's';
+        particlesContainer.appendChild(particle);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', createParticles);
+
+    document.querySelectorAll('.fabric-piece').forEach((piece, index) => {
+      piece.style.setProperty('--rotation', (index * 15 - 10) + 'deg');
+
+      piece.addEventListener('mouseenter', () => {
+        piece.style.transform = `scale(1.2) rotate(${index * 15 + 10}deg)`;
+        piece.style.opacity = '0.8';
+      });
+
+      piece.addEventListener('mouseleave', () => {
+        piece.style.transform = `scale(1) rotate(${index * 15 - 10}deg)`;
+        piece.style.opacity = '0.6';
+      });
+    });
+
+    document.querySelectorAll('.btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const ripple = document.createElement('span');
+        ripple.style.position = 'absolute';
+        ripple.style.borderRadius = '50%';
+        ripple.style.background = 'rgba(255,255,255,0.6)';
+        ripple.style.transform = 'scale(0)';
+        ripple.style.animation = 'ripple 0.6s linear';
+        ripple.style.left = (e.clientX - e.target.offsetLeft) + 'px';
+        ripple.style.top = (e.clientY - e.target.offsetTop) + 'px';
+        ripple.style.width = ripple.style.height = '20px';
+        btn.appendChild(ripple);
+        setTimeout(() => ripple.remove(), 600);
+      });
+    });
+
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes ripple {
+        to {
+          transform: scale(4);
+          opacity: 0;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+  </script>
+</body>
+</html>

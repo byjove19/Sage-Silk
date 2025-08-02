@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="Find answers to common questions about Sage & Silk's luxury fashion services, atelier visits, custom designs, and appointment scheduling">
+    <meta name="keywords" content="Sage & Silk FAQ, fashion atelier questions, bespoke clothing queries, designer appointment info, luxury fashion FAQ">
+
+    <!-- Primary Meta Tags -->
+    <title>FAQs | Sage & Silk Luxury Fashion Atelier - Your Questions Answered</title>
+    <meta property="og:title" content="Sage & Silk FAQs | Luxury Fashion Atelier Questions">
+    <meta property="og:description" content="Get answers about our luxury fashion services, custom designs, and atelier experience in New York">
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="assets/css/bootstrap.min.css" as="style">
+    <link rel="preload" href="assets/css/styles.css" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" crossorigin="anonymous">
+    <link rel="preload" href="assets/js/main.js" as="script">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/accordion.css" media="print" onload="this.media='all'">
+
+    <!-- Font Awesome (optimized single version) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+          crossorigin="anonymous" 
+          referrerpolicy="no-referrer">
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="assets/images/favicon.png" />
+
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.sageandsilk.com/faqs">
+
+    <!-- Structured Data for FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [{
+            "@type": "Question",
+            "name": "How do I schedule an atelier appointment?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Contact us via our online form or call directly during business hours to schedule your private consultation."
+            }
+        }]
+    }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #f5f3f0 0%, #e8e4df 100%);
+            min-height: 100vh;
+            line-height: 1.6;
+            color: #5a6249;
+        }
+
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .fabric-piece {
+            position: absolute;
+            opacity: 0.3;
+            animation: float 10s ease-in-out infinite;
+        }
+
+        .fabric-piece:nth-child(1) {
+            top: 10%;
+            left: 8%;
+            width: 70px;
+            height: 45px;
+            background: linear-gradient(45deg, #9ca986, #a8b894);
+            border-radius: 25px;
+            animation-delay: 0s;
+            transform: rotate(20deg);
+        }
+
+        .fabric-piece:nth-child(2) {
+            top: 25%;
+            right: 12%;
+            width: 85px;
+            height: 35px;
+            background: linear-gradient(45deg, #d4c5b0, #c7b299);
+            border-radius: 18px;
+            animation-delay: 4s;
+            transform: rotate(-15deg);
+        }
+
+        .fabric-piece:nth-child(3) {
+            top: 55%;
+            left: 10%;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #8b9474, #96a082);
+            border-radius: 30px;
+            animation-delay: 8s;
+            transform: rotate(30deg);
+        }
+
+        .fabric-piece:nth-child(4) {
+            bottom: 15%;
+            right: 15%;
+            width: 75px;
+            height: 40px;
+            background: linear-gradient(45deg, #c9ba9b, #b8a988);
+            border-radius: 20px;
+            animation-delay: 2s;
+            transform: rotate(-25deg);
+        }
+
+        .fabric-piece:nth-child(5) {
+            top: 75%;
+            right: 35%;
+            width: 55px;
+            height: 30px;
+            background: linear-gradient(45deg, #a8b894, #9ca986);
+            border-radius: 15px;
+            animation-delay: 6s;
+            transform: rotate(45deg);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(var(--rotation, 0deg)); }
+            33% { transform: translateY(-30px) rotate(calc(var(--rotation, 0deg) + 10deg)); }
+            66% { transform: translateY(15px) rotate(calc(var(--rotation, 0deg) - 5deg)); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: #6b7460;
+            margin-bottom: 1rem;
+            letter-spacing: 3px;
+        }
+
+        .page-title {
+            font-size: 3.5rem;
+            font-weight: 100;
+            color: #9ca986;
+            margin-bottom: 1rem;
+            text-shadow: 0 5px 15px rgba(156, 169, 134, 0.2);
+        }
+
+        .page-subtitle {
+            font-size: 1.3rem;
+            color: #7a8268;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .decorative-line {
+            width: 120px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #9ca986, transparent);
+            margin: 2rem auto;
+            animation: slideIn 1s ease-out 0.5s both;
+        }
+
+        .search-section {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .search-container {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1.2rem 3rem 1.2rem 1.5rem;
+            border: 2px solid rgba(156, 169, 134, 0.3);
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-family: inherit;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            color: #5a6249;
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #9ca986;
+            box-shadow: 0 8px 25px rgba(156, 169, 134, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #9ca986;
+            font-size: 1.3rem;
+            pointer-events: none;
+        }
+
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3rem;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 1rem 2rem;
+            background: transparent;
+            border: 2px solid rgba(156, 169, 134, 0.4);
+            border-radius: 50px;
+            color: #6b7460;
+            font-family: inherit;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(45deg, #9ca986, #a8b894);
+            color: white;
+            border-color: transparent;
+            box-shadow: 0 8px 25px rgba(156, 169, 134, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .tab-btn:hover:not(.active) {
+            border-color: #9ca986;
+            background: rgba(156, 169, 134, 0.1);
+            transform: translateY(-1px);
+        }
+
+        .faq-section {
+            display: none;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .faq-section.active {
+            display: block;
+        }
+
+        .faq-grid {
+            display: grid;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(156, 169, 134, 0.2);
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 25px rgba(156, 169, 134, 0.1);
+        }
+
+        .faq-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(156, 169, 134, 0.2);
+        }
+
+        .faq-item.hidden {
+            display: none;
+        }
+
+        .faq-question {
+            padding: 2rem;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(156, 169, 134, 0.1);
+        }
+
+        .faq-question:hover {
+            background: rgba(156, 169, 134, 0.05);
+        }
+
+        .faq-question h3 {
+            font-size: 1.3rem;
+            color: #6b7460;
+            font-weight: 400;
+            margin: 0;
+            padding-right: 3rem;
+            line-height: 1.4;
+        }
+
+        .faq-toggle {
+            position: absolute;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #9ca986, #a8b894);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.open .faq-toggle {
+            transform: translateY(-50%) rotate(45deg);
+            background: linear-gradient(45deg, #8b9474, #96a082);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            background: rgba(248, 246, 243, 0.8);
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-answer-content {
+            padding: 2rem;
+            color: #7a8268;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .faq-answer-content p {
+            margin-bottom: 1rem;
+        }
+
+        .faq-answer-content ul {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+
+        .faq-answer-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-answer-content a {
+            color: #9ca986;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(156, 169, 134, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .faq-answer-content a:hover {
+            color: #8b9474;
+            border-bottom-color: #8b9474;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(156, 169, 134, 0.2) 0%, rgba(156, 169, 134, 0.1) 100%);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+        }
+
+        .contact-cta {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(156, 169, 134, 0.2);
+        }
+
+        .contact-title {
+            font-size: 2.2rem;
+            color: #6b7460;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .contact-subtitle {
+            font-size: 1.2rem;
+            color: #7a8268;
+            margin-bottom: 2rem;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1.2rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-btn.primary {
+            background: linear-gradient(45deg, #9ca986, #a8b894);
+            color: white;
+            box-shadow: 0 8px 25px rgba(156, 169, 134, 0.3);
+        }
+
+        .contact-btn.secondary {
+            background: transparent;
+            color: #6b7460;
+            border: 2px solid #9ca986;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(156, 169, 134, 0.4);
+        }
+
+        .contact-btn.secondary:hover {
+            background: #9ca986;
+            color: white;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #7a8268;
+            font-size: 1.2rem;
+            display: none;
+        }
+
+        .no-results.show {
+            display: block;
+        }
+
+        .no-results-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                width: 0;
+            }
+            to {
+                width: 120px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .logo {
+                font-size: 2rem;
+            }
+            
+            .page-title {
+                font-size: 2.8rem;
+            }
+            
+            .category-tabs {
+                gap: 0.3rem;
+            }
+            
+            .tab-btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+            
+            .faq-question {
+                padding: 1.5rem;
+            }
+            
+            .faq-question h3 {
+                font-size: 1.1rem;
+                padding-right: 2.5rem;
+            }
+            
+            .faq-toggle {
+                right: 1.5rem;
+                width: 25px;
+                height: 25px;
+                font-size: 1rem;
+            }
+            
+            .faq-answer-content {
+                padding: 1.5rem;
+                font-size: 1rem;
+            }
+            
+            .contact-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .contact-btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+
+        .particles {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #9ca986;
+            border-radius: 50%;
+            opacity: 0.4;
+            animation: particleFloat 15s linear infinite;
+        }
+
+        @keyframes particleFloat {
+            0% {
+                transform: translateY(100vh) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.4;
+            }
+            90% {
+                opacity: 0.4;
+            }
+            100% {
+                transform: translateY(-100px) translateX(200px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-elements">
+        <div class="fabric-piece"></div>
+        <div class="fabric-piece"></div>
+        <div class="fabric-piece"></div>
+        <div class="fabric-piece"></div>
+        <div class="fabric-piece"></div>
+    </div>
+
+    <div class="particles" id="particles"></div>
+
+    <div class="container">
+        <header class="header">
+            <h1 class="logo">SAGE & SILK</h1>
+            <h2 class="page-title">FAQ</h2>
+            <p class="page-subtitle">Find answers to your most common questions about our sustainable fashion, sizing, care instructions, and more.</p>
+            <div class="decorative-line"></div>
+        </header>
+
+        <div class="search-section">
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search for answers..." id="searchInput">
+                <div class="search-icon"></div>
+            </div>
+        </div>
+
+        <div class="category-tabs">
+            <button class="tab-btn active" onclick="showCategory('general')">General</button>
+            <button class="tab-btn" onclick="showCategory('orders')">Orders & Shipping</button>
+            <button class="tab-btn" onclick="showCategory('products')">Products & Care</button>
+            <button class="tab-btn" onclick="showCategory('returns')">Returns & Exchanges</button>
+            <button class="tab-btn" onclick="showCategory('sustainability')">Sustainability</button>
+        </div>
+
+        <!-- General FAQ Section -->
+        <div class="faq-section active" id="general">
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>What makes Sage & Silk different from other fashion brands?</h3>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Sage & Silk is committed to <span class="highlight">sustainable luxury fashion</span> that doesn't compromise on style or ethics. We focus on:</p>
+                            <ul>
+                                <li>Premium natural fabrics like organic silk, linen, and cotton</li>
+                                <li>Timeless designs that transcend seasonal trends</li>
+                                <li>Ethical production practices with fair wages</li>
+                                <li>Minimal environmental impact through conscious sourcing</li>
+                                <li>Exceptional craftsmanship that ensures longevity</li>
+                            </ul>
+                            <p>Every piece is designed to be a treasured addition to your wardrobe for years to come.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Do you offer international shipping?</h3>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Yes! We ship to over <span class="highlight">50 countries worldwide</span>. Shipping costs and delivery times vary by location:</p>
+                            <ul>
+                                <li><strong>US & Canada:</strong> 3-5 business days, free shipping on orders over $150</li>
+                                <li><strong>Europe:</strong> 5-7 business days, free shipping on orders over $200</li>
+                                <li><strong>Australia & Asia:</strong> 7-10 business days, free shipping on orders over $250</li>
+                                <li><strong>Rest of World:</strong> 10-14 business days, shipping costs calculated at checkout</li>
+                            </ul>
+                            <p>All international orders are shipped with tracking and insurance included.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>How do I determine my size?</h3>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>We recommend using our detailed <a href="/size-guide">Size Guide</a> which includes:</p>
+                            <ul>
+                                <li>Comprehensive measurement charts for all clothing types</li>
+                                <li>International size conversions</li>
+                                <li>Step-by-step measuring instructions</li>
+                                <li>Fit guide for our signature relaxed silhouettes</li>
+                            </ul>
+                            <p>If you're between sizes, we generally recommend <span class="highlight">sizing up</span> for our flowing, comfortable fit. Our customer service team is also available for personalized sizing advice.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Can I modify or cancel my order after placing it?</h3>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>We understand plans can change! Here's what you can do:</p>
+                            <ul>
+                                <li><strong>Within 1 hour:</strong> Contact us immediately for modifications or cancellations</li>
+                                <li><strong>Before shipping:</strong> We can often accommodate changes to size, color, or address</li>
+                                <li><strong>After shipping:</strong> You can refuse delivery for a full refund, or use our exchange policy</li>
+                            </ul>
+                            <p>Contact our customer service at <a href="mailto:orders@sageandsilk.com">orders@sageandsilk.com</a> or call us during business hours for the fastest assistance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Orders & Shipping Section -->
+        <div class="faq-section" id="orders">
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>What payment methods do you accept?</h3>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>We accept all major payment methods for your convenience:</p>
+                            <ul>
+                                <li>Credit Cards: Visa, Mastercard, American Express, Discover</li>
+                                <li>Digital Wallets: PayPal, Apple Pay, Google Pay, Shop Pay</li>
+                                <li>Buy Now, Pay Later: Klarna, Afterpay (for eligible orders)</li>
+                                <li>Bank Transfer (for international wholesale orders)</li>
+                            </ul>
+                            <p>All transactions are <span class="highlight">secured with SSL encryption</span> and we never store your payment information.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>How can I track my order?</h3>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Tracking your order is easy:</p>
+                            <ul>
+                                <li><strong>Email Confirmation:</strong> You'll receive a tracking number within 24 hours of shipping</li>
+                                <li><strong>Account Dashboard:</strong> Log into your account to view all order statuses</li>
+                                <li><strong>SMS Updates:</strong> Opt-in for text notifications about your delivery</li>
+                                <li><strong>Carrier Tracking:</strong> Use the tracking number on FedEx, UPS, or DHL websites</li>
+                            </ul>
+                            <p>If you don't receive tracking information within 48 hours, please contact our support team.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Do you offer express or overnight shipping?</h3>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Yes! We offer expedited shipping options:</p>
+                            <ul>
+                                <li><strong>Express (2-3 days):</strong> Available for US orders, additional $15</li>
+                                <li><strong>Overnight (1 day):</strong> Available for US orders placed before 2PM EST, additional $25</li>
+                                <li><strong>International Express:</strong> 3-5 days to most countries, rates vary</li>
+                            </ul>
+                            <p><span class="highlight">Note:</span> Express shipping is only available for in-stock items. Custom or made-to-order pieces require standard processing time plus express delivery.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>What if my package is lost or damaged?</h3>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>We've got you covered! All our shipments include insurance:</p>
+                            <ul>
+                                <li><strong>Lost Packages:</strong> We'll file a claim and send a replacement immediately</li>
+                                <li><strong>Damaged Items:</strong> Take photos and contact us within 48 hours for a quick resolution</li>
+                                <li><strong>Incorrect Delivery:</strong> We'll work with the carrier to locate your package</li>
+                                <li><strong>Stolen Packages:</strong> File a police report and we'll assist with insurance claims</li>
+                            </ul>
+                            <p>Your satisfaction is our priority - we'll make it right, guaranteed.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Products & Care Section -->
+        <div class="faq-section" id="products">
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>What fabrics do you use and why?</h3>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>We carefully select <span class="highlight">premium natural fibers</span> for their beauty, comfort, and sustainability:</p>
+                            <ul>
+                                <li><strong>Organic Silk:</strong> Luxurious, breathable, and biodegradable from ethical sources</li>
+                                <li><strong>Linen:</strong> Durable, cooling, and becomes softer with each wear</li>
+                                <li><strong>Organic Cotton:</strong> Soft, versatile, and grown without harmful pesticides</li>
+                                <li><strong>Tencel/Lyocell:</strong> Eco-friendly alternative with silk-like drape</li>
+                                <li><strong>Wool:</strong> Temperature-regulating and naturally odor-resistant</li>
+                            </ul>
+                            <p>Each fabric is chosen for its specific properties and how it enhances the design's intended feel and function.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>How should I care for my Sage & Silk garments?</h3>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Proper care ensures your pieces remain beautiful for years:</p>
+                            <ul>
+                                <li><strong>Silk:</strong> Hand wash or dry clean, air dry away from direct sunlight</li>
+                                <li><strong>Linen:</strong> Machine wash cold, line dry, iron while slightly damp</li>
+                                <li><strong>Cotton:</strong> Machine wash cold, tumble dry low or air dry</li>
+                                <li><strong>Wool:</strong> Hand wash in cool water or professional cleaning</li>
+                            </ul>
+                            <p>Each garment includes a detailed care label. For specific stain removal or care questions, contact our <a href="mailto:care@sageandsilk.com">care specialists</a>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Are your clothes pre-shrunk?</h3>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Most of our garments undergo <span class="highlight">pre-shrinking treatment</span> during production:</p>
+                            <ul>
+                                <li><strong>Cotton & Linen:</strong> Pre-shrunk to minimize size changes</li>
+                                <li><strong>Silk:</strong> Naturally stable with minimal shrinkage risk</li>
+                                <li><strong>Blends:</strong> Treated according to primary fiber content</li>
+                            </ul>
+                            <p>However, natural fibers may still experience minor changes with washing. Following our care instructions ensures minimal alteration and maintains the garment's intended fit.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Do you offer custom sizing or alterations?</h3>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>We offer several customization options:</p>
+                            <ul>
+                                <li><strong>Made-to-Measure:</strong> Custom sizing for select pieces (additional 2-3 weeks)</li>
+                                <li><strong>Length Adjustments:</strong> Hem modifications available for most items</li>
+                                <li><strong>Local Alterations:</strong> We can recommend trusted tailors in major cities</li>
+                                <li><strong>Consultation:</strong> Personal styling sessions for wardrobe planning</li>
+                            </ul>
+                            <p>Contact our styling team at <a href="mailto:styling@sageandsilk.com">styling@sageandsilk.com</a> to discuss your specific needs and pricing.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>How long do your garments typically last?</h3>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Our commitment to quality means garments designed to last:</p>
+                            <ul>
+                                <li><strong>Average Lifespan:</strong> 5-10+ years with proper care</li>
+                                <li><strong>Construction:</strong> Reinforced seams, quality hardware, and hand-finished details</li>
+                                <li><strong>Timeless Design:</strong> Classic silhouettes that don't go out of style</li>
+                                <li><strong>Repair Service:</strong> We offer mending for items purchased within 2 years</li>
+                            </ul>
+                            <p>Many customers tell us their <span class="highlight">Sage & Silk pieces become wardrobe staples</span> that only improve with age and wear.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Returns & Exchanges Section -->
+        <div class="faq-section" id="returns">
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>What is your return policy?</h3>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>We want you to love your purchase! Our <span class="highlight">30-day return policy</span> includes:</p>
+                            <ul>
+                                <li><strong>Time Frame:</strong> 30 days from delivery date</li>
+                                <li><strong>Condition:</strong> Items must be unworn, unwashed, with original tags</li>
+                                <li><strong>Return Shipping:</strong> Free return shipping within the US</li>
+                                <li><strong>Processing:</strong> Refunds issued within 5-7 business days of receipt</li>
+                                <li><strong>International:</strong> Customer responsible for return shipping costs</li>
+                            </ul>
+                            <p>Sale items and custom pieces are final sale unless defective.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>How do I start a return or exchange?</h3>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Starting a return is simple:</p>
+                            <ul>
+                                <li><strong>Online Portal:</strong> Log into your account and select "Return Item"</li>
+                                <li><strong>Email:</strong> Contact <a href="mailto:returns@sageandsilk.com">returns@sageandsilk.com</a> with your order number</li>
+                                <li><strong>Print Label:</strong> We'll email you a prepaid return label</li>
+                                <li><strong>Package:</strong> Use original packaging when possible</li>
+                                <li><strong>Drop Off:</strong> Take to any authorized shipping location</li>
+                            </ul>
+                            <p>You'll receive tracking information and email updates throughout the return process.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Can I exchange for a different size or color?</h3>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Absolutely! Exchanges are easy and convenient:</p>
+                            <ul>
+                                <li><strong>Same Item:</strong> Direct exchange for different size/color (subject to availability)</li>
+                                <li><strong>Different Item:</strong> Return original and place new order for fastest service</li>
+                                <li><strong>Price Difference:</strong> We'll refund or charge the difference as needed</li>
+                                <li><strong>Out of Stock:</strong> We'll notify you of restock dates or suggest alternatives</li>
+                            </ul>
+                            <p>Exchanges follow the same 30-day policy and include <span class="highlight">free shipping both ways</span> within the US.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>What if I receive a defective item?</h3>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Quality is our priority, but if you receive a defective item:</p>
+                            <ul>
+                                <li><strong>Contact Immediately:</strong> Email us within 7 days with photos</li>
+                                <li><strong>Fast Resolution:</strong> We'll send a replacement or full refund immediately</li>
+                                <li><strong>Keep the Item:</strong> Often you can keep the defective piece while we send a new one</li>
+                                <li><strong>No Cost:</strong> All shipping costs covered by us</li>
+                                <li><strong>Quality Review:</strong> We investigate all defects to prevent future issues</li>
+                            </ul>
+                            <p>Defective items are handled outside our normal return policy with <span class="highlight">extended time frames</span> for resolution.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sustainability Section -->
+        <div class="faq-section" id="sustainability">
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>How is Sage & Silk environmentally sustainable?</h3>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Sustainability is woven into every aspect of our business:</p>
+                            <ul>
+                                <li><strong>Eco-Friendly Materials:</strong> Organic, recycled, and low-impact fibers</li>
+                                <li><strong>Ethical Production:</strong> Fair wages and safe working conditions</li>
+                                <li><strong>Minimal Waste:</strong> Zero-waste pattern making and fabric recycling programs</li>
+                                <li><strong>Carbon Neutral Shipping:</strong> Offset emissions for all deliveries</li>
+                                <li><strong>Circular Fashion:</strong> Repair services and end-of-life garment recycling</li>
+                                <li><strong>Transparent Supply Chain:</strong> Full traceability from fiber to finished product</li>
+                            </ul>
+                            <p>We're <span class="highlight">B-Corp certified</span> and continuously working toward even greater environmental impact reduction.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Where are your products made?</h3>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>We partner with <span class="highlight">certified ethical manufacturers</span> in select regions:</p>
+                            <ul>
+                                <li><strong>Portugal:</strong> Our primary production hub for most garments</li>
+                                <li><strong>Italy:</strong> Specialized silk and luxury knitwear production</li>
+                                <li><strong>Peru:</strong> Sustainable cotton and alpaca fiber processing</li>
+                                <li><strong>India:</strong> Traditional textile techniques and organic cotton sourcing</li>
+                            </ul>
+                            <p>All facilities are GOTS-certified, undergo regular audits, and meet our strict standards for worker welfare, environmental protection, and quality craftsmanship.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Do you have a clothing recycling program?</h3>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Yes! Our <span class="highlight">"Circle Back" program</span> gives your garments new life:</p>
+                            <ul>
+                                <li><strong>Any Brand Welcome:</strong> Send us clothing from any brand, not just ours</li>
+                                <li><strong>Store Credit:</strong> Receive $15 credit for each Sage & Silk item returned</li>
+                                <li><strong>Donation Partners:</strong> Wearable items go to local charities</li>
+                                <li><strong>Textile Recycling:</strong> Unwearable items become new fibers or insulation</li>
+                                <li><strong>Upcycling Projects:</strong> Some pieces become limited-edition reworked designs</li>
+                            </ul>
+                            <p>Simply request a recycling label through your account or email <a href="mailto:recycle@sageandsilk.com">recycle@sageandsilk.com</a>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>What certifications do you have?</h3>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>We maintain several third-party certifications to ensure accountability:</p>
+                            <ul>
+                                <li><strong>B-Corporation:</strong> Certified benefit corporation meeting social and environmental standards</li>
+                                <li><strong>GOTS:</strong> Global Organic Textile Standard for organic fiber production</li>
+                                <li><strong>OEKO-TEX:</strong> Standard 100 for harmful substance testing</li>
+                                <li><strong>Fair Trade:</strong> Certified for select cotton and silk products</li>
+                                <li><strong>Cradle to Cradle:</strong> Gold level certification for circular design principles</li>
+                            </ul>
+                            <p>These certifications are renewed annually and available for review on our <a href="/sustainability">sustainability page</a>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="no-results" id="noResults">
+            <div class="no-results-icon">🔍</div>
+            <h3>No results found</h3>
+            <p>Try adjusting your search terms or browse our categories above.</p>
+        </div>
+
+        <div class="contact-cta">
+            <h3 class="contact-title">Still Have Questions?</h3>
+            <p class="contact-subtitle">Our customer service team is here to help with personalized assistance.</p>
+            <div class="contact-buttons">
+                <a href="mailto:hello@sageandsilk.com" class="contact-btn primary">
+                    <span>Email Support</span>
+                    <span>→</span>
+                </a>
+                <a href="/contact" class="contact-btn secondary">
+                    <span>Live Chat</span>
+                </a>
+            </div>
+        </div>
+    </div>
+       <!-- ***** Footer Start ***** -->
+    <!--Footer-->
+    <footer id="footer" class="footer-2">
+        <div class="site-footer">
+            <div class="container">
+                <div class="footer-top">
+                    <div class="logo">
+                        <img src="/assets/images/sagesilk.png" alt="sage-silk logo">
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-3 col-lg-3 contact-box">
+                            <h4>Contact Us</h4>
+                            <ul class="addressFooter">
+                                <li><i class="icon anm anm-map-marker-al"></i><p>Green Tower Plaza, Okukoko, Warri, Delta State, Nigeria</p></li>
+                                <li class="phone"><i class="icon anm anm-phone-s"></i><p>+234-8059-3077-39, +234-8095-5212-17</p></li>
+                                <li class="fa-envelope-o"><i class="icon-email"></i><a href="mailto:sage-silk@gmail.com">sage-silk@gmail.com</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-3 col-lg-3 footer-links">
+                            <h4>Quick Shop</h4>
+                            <ul>
+                                <li><a href="/women">Women</a></li>
+                                <li><a href="/men">Men</a></li>
+                                <li><a href="/kids">Kids</a></li>
+                                <li><a href="/makeup">Cosmetics</a></li>
+                                <li><a href="/accessories">Accessories</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-3 col-lg-3 footer-links">
+                            <h4>Informations</h4>
+                            <ul>
+                                <li><a href="/about">About us</a></li>
+                                <li><a href="/shipping">Shipping</a></li>
+                                <li><a href="/racking">Tracking</a></li>
+                                <li><a href="/terms">Terms &amp; condition</a></li>
+                                <li><a href="/profile">My Account</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-3 col-lg-3 footer-links">
+                            <h4>Customer Services</h4>
+                            <ul>
+                                <li><a href="">Request Personal Data</a></li>
+                                <li><a href="/FAQ">FAQ's</a></li>
+                                <li><a href="/contact">Contact Us</a></li>
+                                <li><a href="/myorders">Orders and Returns</a></li>
+                                <li><a href="#">Support Center</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="footer-bottom">
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 order-1 order-md-0 order-lg-0 order-sm-1 copyright text-sm-center text-md-left text-lg-left">
+                            <div class="under-footer">
+                                <p>Copyright © 2025 All Rights Reserved.</p>
+                                <p>Design: <a href="https://linktr.ee/byjovetech" target="_parent" title="byjovetech">Byjove Tech</a></p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 order-0 order-md-1 order-lg-1 order-sm-0 payment-icons text-right text-md-center">
+                            <ul class="payment-icons list--inline">
+                                <li><i class="icon fa fa-cc-visa" aria-hidden="true"></i></li>
+                                <li><i class="icon fa fa-cc-mastercard" aria-hidden="true"></i></li>
+                                <li><i class="icon fa fa-cc-discover" aria-hidden="true"></i></li>
+                                <li><i class="icon fa fa-cc-paypal" aria-hidden="true"></i></li>
+                                <li><i class="icon fa fa-cc-amex" aria-hidden="true"></i></li>
+                                <li><i class="icon fa fa-credit-card" aria-hidden="true"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tab functionality
+        function showCategory(categoryName) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.faq-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(categoryName).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+            
+            // Clear search when changing tabs
+            document.getElementById('searchInput').value = '';
+            showAllFAQs();
+        }
+
+        // FAQ toggle functionality
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            const isOpen = faqItem.classList.contains('open');
+            
+            // Close all other FAQs in the current section
+            const currentSection = faqItem.closest('.faq-section');
+            const allFAQs = currentSection.querySelectorAll('.faq-item');
+            allFAQs.forEach(item => {
+                item.classList.remove('open');
+            });
+            
+            // Toggle the clicked FAQ
+            if (!isOpen) {
+                faqItem.classList.add('open');
+            }
+        }
+
+        // Search functionality
+        function searchFAQs() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const allFAQItems = document.querySelectorAll('.faq-item');
+            const noResults = document.getElementById('noResults');
+            let hasResults = false;
+
+            allFAQItems.forEach(item => {
+                const question = item.querySelector('.faq-question h3').textContent.toLowerCase();
+                const answer = item.querySelector('.faq-answer-content').textContent.toLowerCase();
+                
+                if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                    item.classList.remove('hidden');
+                    hasResults = true;
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+
+            // Show/hide no results message
+            if (searchTerm && !hasResults) {
+                noResults.classList.add('show');
+            } else {
+                noResults.classList.remove('show');
+            }
+        }
+
+        function showAllFAQs() {
+            const allFAQItems = document.querySelectorAll('.faq-item');
+            const noResults = document.getElementById('noResults');
+            
+            allFAQItems.forEach(item => {
+                item.classList.remove('hidden');
+            });
+            
+            noResults.classList.remove('show');
+        }
+
+        // Search input event listener
+        document.getElementById('searchInput').addEventListener('input', searchFAQs);
+
+        // Create floating particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 25;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Initialize particles when page loads
+        document.addEventListener('DOMContentLoaded', createParticles);
+
+        // Add hover effects to fabric pieces
+        document.querySelectorAll('.fabric-piece').forEach((piece, index) => {
+            piece.style.setProperty('--rotation', (index * 25 - 20) + 'deg');
+            
+            piece.addEventListener('mouseenter', () => {
+                piece.style.transform = `scale(1.4) rotate(${index * 25 + 20}deg)`;
+                piece.style.opacity = '0.6';
+            });
+            
+            piece.addEventListener('mouseleave', () => {
+                piece.style.transform = `scale(1) rotate(${index * 25 - 20}deg)`;
+                piece.style.opacity = '0.3';
+            });
+        });
+
+        // Add staggered animation on load
+        window.addEventListener('load', () => {
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach((item, index) => {
+                item.style.animationDelay = (index * 0.1) + 's';
+                item.classList.add('animate-in');
+            });
+        });
+
+        // Add CSS for load animation
+        const style = document.createElement('style');
+        style.textContent = `
+            .animate-in {
+                animation: fadeInUp 0.6s ease-out forwards;
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Smooth scroll to top when changing tabs
+        function smoothScrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Add scroll to top when changing tabs
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                setTimeout(smoothScrollToTop, 100);
+            });
+        });
+    </script>
+</body>
+</html>
